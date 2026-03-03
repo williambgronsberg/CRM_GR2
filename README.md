@@ -66,13 +66,7 @@ http://localhost:8000
 
 Per nå består prosjektet hovedsakelig av filstruktur og dokumentasjon. Implementasjon av funksjonalitet må fylles inn i de relevante PHP-filene.
 
-## Videre arbeid (forslag)
 
-- Legg til databasekobling (f.eks. MySQL + PDO)
-- Implementer CRUD-funksjoner i hver side
-- Legg til validering og feilhåndtering i skjemaer
-- Sikre innlogging med passordhashing og sesjonshåndtering
-- Skriv enkle tester for kritisk logikk
 
 ## Lisens
 
