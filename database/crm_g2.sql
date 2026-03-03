@@ -50,8 +50,8 @@ CREATE TABLE IF NOT EXISTS `crm_g2`.`customer_has_user` (
   `customer_id` INT NOT NULL,
   `user_id` INT NOT NULL,
   PRIMARY KEY (`customer_id`, `user_id`),
-  INDEX `fk_customer_has_user_user1_idx` (`user_id` ASC) VISIBLE,
-  INDEX `fk_customer_has_user_customer_idx` (`customer_id` ASC) VISIBLE,
+  INDEX `fk_customer_has_user_user1_idx` (`user_id` ASC),
+  INDEX `fk_customer_has_user_customer_idx` (`customer_id` ASC),
   CONSTRAINT `fk_customer_has_user_customer`
     FOREIGN KEY (`customer_id`)
     REFERENCES `crm_g2`.`customer` (`customer_id`)
