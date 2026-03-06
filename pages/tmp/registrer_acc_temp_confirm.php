@@ -4,12 +4,11 @@
  * @Author: William Berge Groensberg
  * @Date:   2026-03-06 13:11:50
  * @Last Modified by:   William Berge Groensberg
- * @Last Modified time: 2026-03-06 13:42:14
+ * @Last Modified time: 2026-03-06 15:37:26
  */
 
 
-
-include "connect.php";
+include('../../database/connect.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$Username = $_POST["username"];

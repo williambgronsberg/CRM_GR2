@@ -1,7 +1,80 @@
+/**
+ * @Author: William Berge Groensberg
+ * @Date:   2026-03-03 09:18:02
+ * @Last Modified by:   William Berge Groensberg
+ * @Last Modified time: 2026-03-06 16:48:31
+ */
 :root {
-    --grey: 122, 101, 99;
-    --brown: 211, 165, 136;
-    --white: 236, 226, 208;
-    --mint: 127, 209, 185;
-    --pink: 229, 99, 153;
+	--grey: 122, 101, 99;
+	--brown: 211, 165, 136;
+	--white: 236, 226, 208;
+	--mint: 127, 209, 185;
+	--pink: 229, 99, 153;
+	--green: 127, 209, 185;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "acid-green", sans-serif;
+	font-weight: 400;
+	letter-spacing: 3px;
+	font-style: normal;
+	background: rgb(var(--pink));
+}
+
+nav {
+	background-color: rgb(var(--pink));
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 48px;
+	margin-top: 23px;
+}
+
+.nav-logo {
+	color: white;
+	font-size: 36px;
+	font-weight: 700;
+	font-family: 'Comic Sans MS', cursive, sans-serif;
+	letter-spacing: 0.5px;
+}
+
+.nav-links {
+	display: flex;
+	align-items: center;
+	gap: 60px;
+}
+
+.nav-links a {
+	color: white;
+	text-decoration: none;
+	font-size: 42px;
+	font-weight: 500;
+	opacity: 0.95;
+	transition: opacity 0.2s;
+}
+
+.nav-links a:hover {
+	opacity: 0.7;
+
+}
+
+.nav-avatar {
+	width: 83px;
+	height: 83px;
+	border-radius: 50%;
+	background-color: rgb(var(--grey));
+	color: rgb(var(--brown));
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 22px;
+	font-weight: 700;
+	cursor: pointer;
+	/* user-select: pointer; */
 }
