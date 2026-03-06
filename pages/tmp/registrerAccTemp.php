@@ -4,14 +4,13 @@
  * @Author: William Berge Groensberg
  * @Date:   2026-03-06 13:08:24
  * @Last Modified by:   William Berge Groensberg
- * @Last Modified time: 2026-03-06 13:39:43
+ * @Last Modified time: 2026-03-06 15:37:18
  *
  * 
  */
 
 
-include "connect.php";
-
+include('../../database/connect.php');
 
 
 
@@ -42,7 +41,7 @@ include "connect.php";
 		<input type="number" id="phone_number" name="phone_number"><br><br>
 		<label for="email">email</label>
 		<input type="email" id="email" name="email"><br><br>
-		
+
 		<label for="password">Password:</label>
 		<input type="password" id="password" name="password"><br><br>
 		<input type="submit" value="Register">
