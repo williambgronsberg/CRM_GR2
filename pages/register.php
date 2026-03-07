@@ -2,10 +2,9 @@
 
 /**
  * @Author: William Berge Groensberg
- * @Date:   2026-03-06 13:08:24
+ * @Date:   2026-03-06
  */
-
-include '../../database/connect.php';
+include '../database/connect.php';
 
 $error = "";
 
@@ -50,9 +49,90 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <!DOCTYPE html>
 <html lang="en">
-<?php include '../../pages/pieces/head.php'; ?>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Register</title>
-<body class="center-content">
+	<link rel="stylesheet" href="https://use.typekit.net/idz1bdq.css">
+	<link rel="stylesheet" href="../assets/style.css">
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		body {
+			background: rgb(var(--pink));
+			min-height: 100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 40px;
+		}
+		.register-container {
+			max-width: 500px;
+			width: 100%;
+			background: rgb(var(--green));
+			padding: 40px;
+			border-radius: 20px;
+			border: 4px solid #323232;
+			box-shadow: 8px 8px #323232;
+		}
+		.register-container h1 {
+			color: white;
+			font-size: 32px;
+			margin-bottom: 30px;
+			text-align: center;
+		}
+		.form-group {
+			margin-bottom: 20px;
+		}
+		.form-group label {
+			display: block;
+			color: white;
+			font-size: 18px;
+			margin-bottom: 8px;
+		}
+		.form-group input {
+			width: 100%;
+			padding: 15px;
+			font-size: 16px;
+			border-radius: 10px;
+			border: 3px solid #323232;
+			background: white;
+		}
+		.btn-register {
+			width: 100%;
+			padding: 15px;
+			font-size: 18px;
+			font-weight: 700;
+			background: rgb(var(--pink));
+			color: white;
+			border: 3px solid #323232;
+			border-radius: 10px;
+			cursor: pointer;
+			margin-top: 20px;
+		}
+		.btn-register:hover {
+			opacity: 0.8;
+		}
+		.error {
+			color: white;
+			background: rgba(255,0,0,0.3);
+			padding: 10px;
+			border-radius: 8px;
+			margin-bottom: 20px;
+		}
+		.login-link {
+			display: block;
+			text-align: center;
+			color: white;
+			margin-top: 20px;
+			text-decoration: none;
+		}
+	</style>
+</head>
+<body>
 	<div class="register-container">
 		<h1>Register</h1>
 		
@@ -60,7 +140,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			<p class="error"><?php echo $error; ?></p>
 		<?php endif; ?>
 		
-		<form action="registrerAccTemp.php" method="post">
+		<form action="register.php" method="post">
 			<div class="form-group">
 				<label for="username">Username</label>
 				<input type="text" id="username" name="username" required>
@@ -103,6 +183,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			
 			<button type="submit" class="btn-register">Register</button>
 		</form>
+		
+		<a href="login.php" class="login-link">Already have an account? Login</a>
 	</div>
 </body>
 </html>

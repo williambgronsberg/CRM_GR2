@@ -2,7 +2,7 @@
  * @Author: William Berge Groensberg
  * @Date:   2026-03-03 09:18:02
  * @Last Modified by:   William Berge Groensberg
- * @Last Modified time: 2026-03-06 16:48:31
+ * @Last Modified time: 2026-03-07 01:16:51
  */
 :root {
 	--grey: 122, 101, 99;
@@ -25,6 +25,14 @@ body {
 	letter-spacing: 3px;
 	font-style: normal;
 	background: rgb(var(--pink));
+
+}
+
+body.center-content {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 40px;
 }
 
 nav {
@@ -40,8 +48,8 @@ nav {
 	color: white;
 	font-size: 36px;
 	font-weight: 700;
-	font-family: 'Comic Sans MS', cursive, sans-serif;
-	letter-spacing: 0.5px;
+	
+	
 }
 
 .nav-links {
@@ -77,4 +85,159 @@ nav {
 	font-weight: 700;
 	cursor: pointer;
 	/* user-select: pointer; */
+}
+
+.register-container {
+	max-width: 500px;
+	width: 100%;
+	margin: 40px auto;
+	background: rgb(var(--green));
+	padding: 40px;
+	border-radius: 20px;
+	border: 4px solid #323232;
+	box-shadow: 8px 8px #323232;
+}
+
+.update-container {
+	width: 1000px;
+	margin: 40px auto;
+	background: rgb(var(--green));
+	padding: 40px;
+	border-radius: 20px;
+	border: 4px solid #323232;
+	box-shadow: 8px 8px #323232;
+}
+
+.register-container h1 {
+	color: white;
+	font-size: 32px;
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+.form-group {
+	margin-bottom: 20px;
+}
+
+.form-group label {
+	display: block;
+	color: white;
+	font-size: 18px;
+	margin-bottom: 8px;
+}
+
+.form-group input {
+	width: 100%;
+	padding: 15px;
+	font-size: 16px;
+	border-radius: 10px;
+	border: 3px solid #323232;
+	background: white;
+}
+
+.form-row {
+	display: flex;
+	gap: 20px;
+}
+
+.form-row .form-group {
+	flex: 1;
+}
+
+.form-row .form-group input {
+	width: 100%;
+}
+
+.btn-register {
+	width: 100%;
+	padding: 15px;
+	font-size: 18px;
+	font-weight: 700;
+	background: rgb(var(--pink));
+	color: white;
+	border: 3px solid #323232;
+	border-radius: 10px;
+	cursor: pointer;
+	margin-top: 20px;
+}
+
+.btn-register:hover {
+	opacity: 0.8;
+}
+
+.error {
+	color: white;
+	background: rgba(255, 0, 0, 0.3);
+	padding: 10px;
+	border-radius: 8px;
+	margin-bottom: 20px;
+}
+
+.update-container {
+	max-width: 1000px;
+	margin: 0 20;
+	background: rgb(var(--green));
+	padding: 40px;
+	border-radius: 20px;
+	border: 4px solid #323232;
+	box-shadow: 8px 8px #323232;
+}
+
+.update-container h1 {
+	color: white;
+	font-size: 32px;
+	margin-bottom: 30px;
+}
+
+.form-group {
+	margin-bottom: 20px;
+}
+
+.form-group label {
+	display: block;
+	color: white;
+	font-size: 18px;
+	margin-bottom: 8px;
+}
+
+.form-group input {
+	width: 100%;
+	padding: 15px;
+	font-size: 16px;
+	border-radius: 10px;
+	border: 3px solid #323232;
+	background: white;
+}
+
+.btn-save {
+	width: 100%;
+	padding: 15px;
+	font-size: 18px;
+	font-weight: 700;
+	background: rgb(var(--pink));
+	color: white;
+	border: 3px solid #323232;
+	border-radius: 10px;
+	cursor: pointer;
+	margin-top: 20px;
+}
+
+.btn-save:hover {
+	opacity: 0.8;
+}
+
+.error {
+	color: white;
+	background: rgba(255, 0, 0, 0.3);
+	padding: 10px;
+	border-radius: 8px;
+	margin-bottom: 20px;
+}
+
+.btn-back {
+	display: inline-block;
+	color: white;
+	text-decoration: none;
+	margin-bottom: 20px;
+	font-size: 16px;
 }
