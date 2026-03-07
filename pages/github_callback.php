@@ -13,7 +13,7 @@
  * This page handles the redirect back from GitHub after the user authorizes.
  */
 
-require "auth/auth.php";
+session_start();
 
 include "../database/connect.php";
 

@@ -4,10 +4,10 @@
  * @Author: William Berge Groensberg
  * @Date:   2026-03-06 12:44:55
  */
-require "auth/auth.php";
+session_start();
 include "../database/connect.php";
 
-if (isLoggedIn()) {
+if (isset($_SESSION["username"])) {
 	header("Location: list_customers.php");
 	exit;
 }

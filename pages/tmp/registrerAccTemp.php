@@ -62,43 +62,43 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		
 		<form action="registrerAccTemp.php" method="post">
 			<div class="form-group">
-				<label for="username">Username</label>
-				<input type="text" id="username" name="username" required>
+				<input type="text" id="username" name="username" placeholder=" " required>
+				<label for="username" class="floating">Username</label>
 			</div>
 			
 			<div class="form-group">
-				<label for="first_name">First Name</label>
-				<input type="text" id="first_name" name="first_name">
+				<input type="text" id="first_name" name="first_name" placeholder=" ">
+				<label for="first_name" class="floating">First Name</label>
 			</div>
 			
 			<div class="form-group">
-				<label for="last_name">Last Name</label>
-				<input type="text" id="last_name" name="last_name">
+				<input type="text" id="last_name" name="last_name" placeholder=" ">
+				<label for="last_name" class="floating">Last Name</label>
 			</div>
 			
 			<div class="form-group">
-				<label for="phone_number">Phone Number</label>
-				<input type="text" id="phone_number" name="phone_number">
+				<input type="text" id="phone_number" name="phone_number" placeholder=" ">
+				<label for="phone_number" class="floating">Phone Number</label>
 			</div>
 			
 			<div class="form-group">
-				<label for="email">Email</label>
-				<input type="email" id="email" name="email">
+				<input type="email" id="email" name="email" placeholder=" ">
+				<label for="email" class="floating">Email</label>
 			</div>
 			
 			<div class="form-group">
-				<label for="github_username">GitHub Username</label>
-				<input type="text" id="github_username" name="github_username">
+				<input type="text" id="github_username" name="github_username" placeholder=" ">
+				<label for="github_username" class="floating">GitHub Username</label>
 			</div>
 			
 			<div class="form-group">
-				<label for="password">Password</label>
-				<input type="password" id="password" name="password" required>
+				<input type="password" id="password" name="password" placeholder=" " required>
+				<label for="password" class="floating">Password</label>
 			</div>
 			
 			<div class="form-group">
-				<label for="confirm_password">Confirm Password</label>
-				<input type="password" id="confirm_password" name="confirm_password" required>
+				<input type="password" id="confirm_password" name="confirm_password" placeholder=" " required>
+				<label for="confirm_password" class="floating">Confirm Password</label>
 			</div>
 			
 			<button type="submit" class="btn-register">Register</button>
