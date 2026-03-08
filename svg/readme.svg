@@ -42,7 +42,7 @@
   <rect x="40" y="288" width="804" height="112" rx="16" fill="rgb(127,209,185)" stroke="#282828" stroke-width="4"/>
   <text x="62" y="316" font-size="16" font-weight="700" fill="white" letter-spacing="1">OM PROSJEKTET</text>
   <line x1="62" y1="324" x2="828" y2="324" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/>
-  <text x="62" y="346" font-size="12" fill="white" opacity="0.9">CRM GR2 er en webapplikasjon bygget i PHP for administrasjon av kunder og kontaktpersoner.</text>
+  <text x="62" y="346" font-size="12" fill="white" opacity="0.9">Frisk as crm er en webapplikasjon bygget i PHP for administrasjon av kunder og kontaktpersoner.</text>
   <text x="62" y="364" font-size="12" fill="white" opacity="0.9">Systemet bruker PDO for sikker kommunikasjon med en MySQL-database, og støtter innlogging</text>
   <text x="62" y="382" font-size="12" fill="white" opacity="0.9">via tradisjonelt brukernavn/passord med bcrypt-hashing, samt GitHub OAuth for enkel tilgang.</text>
 
