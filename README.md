@@ -1,34 +1,43 @@
-# CRM GR2
+<div style="font-family:sans-serif; background:#e56399; color:white; padding:40px; border-radius:20px; letter-spacing:2px;">
 
-![PHP](https://img.shields.io/badge/PHP-8.0+-777BB4?style=for-the-badge&logo=php&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
-![GitHub OAuth](https://img.shields.io/badge/GitHub_OAuth-181717?style=for-the-badge&logo=github&logoColor=white)
-![License](https://img.shields.io/badge/License-None-lightgrey?style=for-the-badge)
+<h1 style="text-align:center; font-size:64px; font-weight:700; margin-bottom:12px;">CRM GR2</h1>
+<p style="text-align:center; font-size:20px; opacity:0.85;">Et enkelt CRM-prosjekt for kunde- og personadministrasjon — bygget i PHP</p>
 
-> Et enkelt CRM-prosjekt for kunde- og personadministrasjon — bygget i PHP.
+<div style="text-align:center; margin-top:24px;">
+  <span style="background: rgba(255,255,255,0.2); border:2px solid rgba(255,255,255,0.5); border-radius:20px; padding:6px 18px; font-size:13px; font-weight:600; margin:2px;">PHP 8.0+</span>
+  <span style="background: rgba(255,255,255,0.2); border:2px solid rgba(255,255,255,0.5); border-radius:20px; padding:6px 18px; font-size:13px; font-weight:600; margin:2px;">MySQL</span>
+  <span style="background: rgba(255,255,255,0.2); border:2px solid rgba(255,255,255,0.5); border-radius:20px; padding:6px 18px; font-size:13px; font-weight:600; margin:2px;">PDO</span>
+  <span style="background: rgba(255,255,255,0.2); border:2px solid rgba(255,255,255,0.5); border-radius:20px; padding:6px 18px; font-size:13px; font-weight:600; margin:2px;">GitHub OAuth</span>
+  <span style="background: rgba(255,255,255,0.2); border:2px solid rgba(255,255,255,0.5); border-radius:20px; padding:6px 18px; font-size:13px; font-weight:600; margin:2px;">Apache/XAMPP</span>
+</div>
 
----
+</div>
 
-## Om prosjektet
+<div style="max-width:860px; margin:40px auto; font-family:sans-serif;">
 
-CRM GR2 er en webapplikasjon for å administrere kunder og kontaktpersoner. Applikasjonen støtter innlogging via brukernavn/passord eller GitHub OAuth, og lar brukere opprette, redigere og slette kunder og kontaktpersoner.
+<!-- Om prosjektet -->
+<div style="background:#7fd1b9; border:4px solid #323232; border-radius:20px; padding:36px 40px; margin-bottom:32px;">
+<h2 style="color:white; font-size:28px; font-weight:700; border-bottom:3px solid rgba(255,255,255,0.3); padding-bottom:12px;">Om prosjektet</h2>
+<p style="color:white; font-size:15px; line-height:1.8;">CRM GR2 er en webapplikasjon for å administrere kunder og kontaktpersoner. Applikasjonen støtter innlogging via brukernavn/passord eller GitHub OAuth, og lar brukere opprette, redigere og slette kunder og kontaktpersoner.</p>
+</div>
 
----
+<!-- Funksjoner -->
+<div style="background:#7fd1b9; border:4px solid #323232; border-radius:20px; padding:36px 40px; margin-bottom:32px;">
+<h2 style="color:white; font-size:28px; font-weight:700; border-bottom:3px solid rgba(255,255,255,0.3); padding-bottom:12px;">Funksjoner</h2>
+<div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:4px;">
+  <div style="background: rgba(255,255,255,0.15); border:2px solid rgba(255,255,255,0.3); border-radius:12px; padding:14px 18px; color:white; font-size:14px;">🏢 Legg til, oppdater og slett kunder</div>
+  <div style="background: rgba(255,255,255,0.15); border:2px solid rgba(255,255,255,0.3); border-radius:12px; padding:14px 18px; color:white; font-size:14px;">👤 Administrer kontaktpersoner</div>
+  <div style="background: rgba(255,255,255,0.15); border:2px solid rgba(255,255,255,0.3); border-radius:12px; padding:14px 18px; color:white; font-size:14px;">🔐 Innlogging med brukernavn & passord</div>
+  <div style="background: rgba(255,255,255,0.15); border:2px solid rgba(255,255,255,0.3); border-radius:12px; padding:14px 18px; color:white; font-size:14px;">🐙 GitHub OAuth-pålogging</div>
+  <div style="background: rgba(255,255,255,0.15); border:2px solid rgba(255,255,255,0.3); border-radius:12px; padding:14px 18px; color:white; font-size:14px;">📋 Listevisning av kunder & personer</div>
+  <div style="background: rgba(255,255,255,0.15); border:2px solid rgba(255,255,255,0.3); border-radius:12px; padding:14px 18px; color:white; font-size:14px;">⚙️ Rediger brukerkonto & profil</div>
+</div>
+</div>
 
-## Funksjoner
-
-- 🏢 Legg til, oppdater og slett kunder
-- 👤 Administrer kontaktpersoner
-- 🔐 Innlogging med brukernavn & passord
-- 🐙 GitHub OAuth-pålogging
-- 📋 Listevisning av kunder & personer
-- ⚙️ Rediger brukerkonto & profil
-
----
-
-## Prosjektstruktur
-
-```
+<!-- Prosjektstruktur -->
+<div style="background:#7fd1b9; border:4px solid #323232; border-radius:20px; padding:36px 40px; margin-bottom:32px;">
+<h2 style="color:white; font-size:28px; font-weight:700; border-bottom:3px solid rgba(255,255,255,0.3); padding-bottom:12px;">Prosjektstruktur</h2>
+<pre style="background:#323232; color:#7fd1b9; border-radius:12px; padding:18px 22px; font-family:monospace; font-size:14px; overflow-x:auto;">
 .
 ├── index.php
 ├── assets/
@@ -59,65 +68,64 @@ CRM GR2 er en webapplikasjon for å administrere kunder og kontaktpersoner. Appl
 └── Details/
     ├── Kravspesifikasjon.docx
     └── TekniskeDetaljer.docx
-```
+</pre>
+</div>
 
----
+<!-- Krav -->
+<div style="background:#7fd1b9; border:4px solid #323232; border-radius:20px; padding:36px 40px; margin-bottom:32px;">
+<h2 style="color:white; font-size:28px; font-weight:700; border-bottom:3px solid rgba(255,255,255,0.3); padding-bottom:12px;">Krav</h2>
+<div style="display:flex; flex-wrap:wrap; gap:14px; margin-top:4px;">
+  <div style="background:#e56399; color:white; border:3px solid #323232; border-radius:10px; padding:10px 20px; font-size:14px; font-weight:700; box-shadow:4px 4px #323232;">PHP 8.0+</div>
+  <div style="background:#e56399; color:white; border:3px solid #323232; border-radius:10px; padding:10px 20px; font-size:14px; font-weight:700; box-shadow:4px 4px #323232;">MySQL / MariaDB</div>
+  <div style="background:#e56399; color:white; border:3px solid #323232; border-radius:10px; padding:10px 20px; font-size:14px; font-weight:700; box-shadow:4px 4px #323232;">Apache (XAMPP / WAMP / MAMP)</div>
+  <div style="background:#e56399; color:white; border:3px solid #323232; border-radius:10px; padding:10px 20px; font-size:14px; font-weight:700; box-shadow:4px 4px #323232;">GitHub OAuth App</div>
+</div>
+</div>
 
-## Kom i gang
+<!-- Kom i gang -->
+<div style="background:#7fd1b9; border:4px solid #323232; border-radius:20px; padding:36px 40px; margin-bottom:32px;">
+<h2 style="color:white; font-size:28px; font-weight:700; border-bottom:3px solid rgba(255,255,255,0.3); padding-bottom:12px;">Kom i gang</h2>
 
-### Krav
+<p style="margin-bottom:10px;">Importer databasen:</p>
+<pre style="background:#323232; color:#7fd1b9; border-radius:12px; padding:18px 22px; font-family:monospace; font-size:14px;">mysql -u root -p &lt; database/crm_g2.sql</pre>
 
-- PHP 8.0 eller nyere
-- MySQL / MariaDB
-- En lokal webserver (f.eks. Apache via XAMPP / WAMP / MAMP)
-- GitHub OAuth App (for GitHub-innlogging)
+<p style="margin-top:18px;margin-bottom:10px;">Start lokal utviklingsserver:</p>
+<pre style="background:#323232; color:#7fd1b9; border-radius:12px; padding:18px 22px; font-family:monospace; font-size:14px;">php -S localhost:8000</pre>
 
-### Oppsett
+<p style="margin-top:18px;margin-bottom:10px;">Åpne i nettleser:</p>
+<pre style="background:#323232; color:#7fd1b9; border-radius:12px; padding:18px 22px; font-family:monospace; font-size:14px;">http://localhost:8000</pre>
 
-1. **Klon repoet**
-   ```bash
-   git clone https://github.com/dittbrukernavn/CRM_GR2.git
-   cd CRM_GR2
-   ```
+<p style="margin-top:18px; opacity:0.8; font-size:13px;">⚠️ GitHub OAuth-innlogging krever at <code style="background:rgba(0,0,0,0.2);padding:2px 6px;border-radius:4px;">redirect_uri</code> i <code style="background:rgba(0,0,0,0.2);padding:2px 6px;border-radius:4px;">github_callback.php</code> matcher din registrerte OAuth-app.</p>
+</div>
 
-2. **Importer databasen**
-   ```bash
-   mysql -u root -p < database/crm_g2.sql
-   ```
+<!-- Status -->
+<div style="background:#7fd1b9; border:4px solid #323232; border-radius:20px; padding:36px 40px; margin-bottom:32px;">
+<h2 style="color:white; font-size:28px; font-weight:700; border-bottom:3px solid rgba(255,255,255,0.3); padding-bottom:12px;">Status</h2>
 
-3. **Start lokal server**
-   ```bash
-   php -S localhost:8000
-   ```
+<div style="display:flex; flex-direction:column; gap:10px;">
+  <div style="display:flex; align-items:center; gap:8px;"><div style="width:12px; height:12px; border-radius:50%; background:#5dde8a;"></div> Autentisering (login, register, GitHub OAuth)</div>
+  <div style="display:flex; align-items:center; gap:8px;"><div style="width:12px; height:12px; border-radius:50%; background:#5dde8a;"></div> Kundeliste med modal for å legge til</div>
+  <div style="display:flex; align-items:center; gap:8px;"><div style="width:12px; height:12px; border-radius:50%; background:#5dde8a;"></div> Profilvisning og redigering av konto</div>
+  <div style="display:flex; align-items:center; gap:8px;"><div style="width:12px; height:12px; border-radius:50%; background:#5dde8a;"></div> Navigasjonsbar med profilmodal</div>
+  <div style="display:flex; align-items:center; gap:8px;"><div style="width:12px; height:12px; border-radius:50%; background:#d3a588;"></div> Oppdater / slett kunde</div>
+  <div style="display:flex; align-items:center; gap:8px;"><div style="width:12px; height:12px; border-radius:50%; background:#d3a588;"></div> Kontaktpersoner — liste, legg til, rediger, slett</div>
+  <div style="display:flex; align-items:center; gap:8px;"><div style="width:12px; height:12px; border-radius:50%; background:rgba(255,255,255,0.3); border:2px solid white;"></div> Om oss-side</div>
+</div>
 
-4. **Åpne i nettleser**
-   ```
-   http://localhost:8000
-   ```
+<p style="margin-top:16px;font-size:13px;opacity:0.7;">🟢 Ferdig &nbsp; 🟡 Under arbeid &nbsp; ⚪ Ikke startet</p>
+</div>
 
-> ⚠️ GitHub OAuth krever at `redirect_uri` i `github_callback.php` matcher din registrerte OAuth-app.
+<!-- Forfatter -->
+<div style="background:#7fd1b9; border:4px solid #323232; border-radius:20px; padding:36px 40px; margin-bottom:32px;">
+<h2 style="color:white; font-size:28px; font-weight:700; border-bottom:3px solid rgba(255,255,255,0.3); padding-bottom:12px;">Forfatter</h2>
 
----
+<div style="display:flex; align-items:center; gap:16px; background: rgba(255,255,255,0.15); border:2px solid rgba(255,255,255,0.3); border-radius:14px; padding:16px 20px;">
+  <div style="width:56px; height:56px; border-radius:50%; background:#7a6563; color:#d3a588; display:flex; align-items:center; justify-content:center; font-size:18px; font-weight:700; border:3px solid #323232;">WG</div>
+  <div style="color:white;">
+    <strong style="font-size:16px; display:block;">William Berge Groensberg</strong>
+    <span style="font-size:13px; opacity:0.75;">Sist oppdatert: 2026-03-07</span>
+  </div>
+</div>
+</div>
 
-## Status
-
-| Side / Funksjon | Status |
-|---|---|
-| Autentisering (login, register) | ✅ Ferdig |
-| GitHub OAuth | ✅ Ferdig |
-| Kundeliste med modal | ✅ Ferdig |
-| Profilvisning og kontoredigering | ✅ Ferdig |
-| Navigasjonsbar med profilmodal | ✅ Ferdig |
-| Oppdater / slett kunde | 🟡 Under arbeid |
-| Kontaktpersoner (CRUD) | 🟡 Under arbeid |
-| Om oss-side | ⚪ Ikke startet |
-
----
-
-## Forfatter
-
-**William Berge Groensberg** — sist oppdatert 2026-03-07
-
----
-
-*Ingen lisens er spesifisert ennå.*
+<p style="text-align:center; color:rgba(255,255,255,0.5); font-size:13px; margin-top:48px; letter-spacing:2px;">CRM GR2 — Ingen lisens spesifisert ennå</p>
