@@ -80,6 +80,15 @@ CREATE TABLE IF NOT EXISTS `crm_g2`.`accounts` (
   UNIQUE INDEX `github_username_UNIQUE` (`github_username` ASC) VISIBLE)
 ENGINE = InnoDB;
 
+-- Legg til tre brukere
+INSERT INTO `crm_g2`.`accounts` 
+(`username`, `password`, `first_name`, `last_name`, `phone_number`, `email`, `github_username`) 
+VALUES
+('william', 'password123', 'William', 'Berge', '12345678', 'william@example.com', 'williamGH'),
+('iselin', 'password123', 'Iselin', 'LastName', '23456789', 'iselin@example.com', 'iselinGH'),
+('sarah', 'password123', 'Sarah', 'LastName', '34567890', 'sarah@example.com', 'sarahGH'),
+('sturle', 'password123', 'Sturle', 'LastName', '45678901', 'sturle@example.com', 'sturleGH');
+
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
