@@ -1,1 +1,1 @@
-<img align="center" src="/svg/readme.svg" width="100%"/>
+<img align="center" src="/assets/svg/readme.svg" width="100%"/>
