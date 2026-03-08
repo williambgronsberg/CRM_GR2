@@ -13,8 +13,6 @@
     </header>
     <main>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
-            <label for="user_id">Bruker ID</label>
-            <input name="user_id" id="user_id" type="text" disabled> <br> <br>
 
             <label for="first_name">Fornavn</label>
             <input name="first_name" id="first_name" type="text" placeholder="Skriv fornavnet ditt her..." required> <br> <br>
