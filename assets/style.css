@@ -277,7 +277,7 @@ nav {
 }
 
 .customers-table-container {
-	width: 800px;
+	width: 1000px;
 	margin: 40px auto;
 	background: white;
 	border-radius: 16px;
@@ -301,21 +301,15 @@ table.customers-table {
 .customers-table thead th {
 	padding: 18px 20px;
 	text-align: left;
-	font-size: 16px;
+	font-size: 20px;
 	font-weight: 700;
-	color: rgb(var(--pink));
+	color: rgb(var(--white));
+	text-shadow: 2px 2px rgb(var(--grey)), -2px -2px rgb(var(--grey)), 2px -2px rgb(var(--grey)), -2px 2px rgb(var(--grey));
 	background: rgb(var(--green));
 }
 
-.customers-table tbody td {
-	padding: 16px 20px;
-	font-size: 15px;
-	color: #323232;
-	border-bottom: 1px solid #ddd;
-}
-
 .customers-table-container {
-	width: 800px;
+	width: 1000px;
 	margin: 40px auto;
 	background: white;
 	border-radius: 16px;
@@ -327,6 +321,7 @@ table.customers-table {
 .customers-table tbody td {
 	padding: 16px 20px;
 	font-size: 15px;
+	font-family: "Archivo", sans-serif;
 	color: #323232;
 	border: none;
 }
@@ -344,6 +339,7 @@ table.customers-table {
 	cursor: pointer;
 	text-decoration: none;
 	box-shadow: 3px 3px #323232;
+	white-space: nowrap;
 }
 
 .btn-action.btn-view {
@@ -357,6 +353,8 @@ table.customers-table {
 }
 
 .btn-add {
+	font-family: "archivo-variable", sans-serif;
+	font-variation-settings: "wdth" 100, "wght" 800;	
 	background: rgb(var(--green));
 	color: white;
 	padding: 12px 24px;
@@ -366,8 +364,8 @@ table.customers-table {
 	cursor: pointer;
 	display: inline-block;
 	box-shadow: 3px 3px #323232;
-	float: right;
 	margin-bottom: 15px;
+	white-space: nowrap;
 }
 
 .btn-add:hover {
