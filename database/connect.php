@@ -11,7 +11,7 @@
 //This file connects to the corresponding database.
 //Parameters for connection:
 
-$Host = "localhost:3307";
+$Host = "localhost";
 $Username = "root";
 $Password = "";
 $Database = "crm_g2";

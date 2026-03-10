@@ -50,8 +50,8 @@ CREATE TABLE IF NOT EXISTS `crm_g2`.`customer_has_user` (
   `customer_id` INT NOT NULL,
   `user_id` INT NOT NULL,
   PRIMARY KEY (`customer_id`, `user_id`),
-  INDEX `fk_customer_has_user_user1_idx` (`user_id` ASC) VISIBLE,
-  INDEX `fk_customer_has_user_customer_idx` (`customer_id` ASC) VISIBLE,
+  INDEX `fk_customer_has_user_user1_idx` (`user_id` ASC) ,
+  INDEX `fk_customer_has_user_customer_idx` (`customer_id` ASC) ,
   CONSTRAINT `fk_customer_has_user_customer`
     FOREIGN KEY (`customer_id`)
     REFERENCES `crm_g2`.`customer` (`customer_id`)
@@ -77,8 +77,17 @@ CREATE TABLE IF NOT EXISTS `crm_g2`.`accounts` (
   `email` VARCHAR(70) NULL,
   `github_username` VARCHAR(45) NULL,
   PRIMARY KEY (`username`),
-  UNIQUE INDEX `github_username_UNIQUE` (`github_username` ASC) VISIBLE)
+  UNIQUE INDEX `github_username_UNIQUE` (`github_username` ASC))
 ENGINE = InnoDB;
+
+-- Legg til tre brukere
+INSERT INTO `crm_g2`.`accounts` 
+(`username`, `password`, `first_name`, `last_name`, `phone_number`, `email`, `github_username`) 
+VALUES
+('william', 'password123', 'William', 'Berge Grønsberg', '91131101', 'william@gmail.com', 'sneakyturtle270508'),
+('iselin', 'password123', 'Iselin', 'Johnsen', '46841520', 'isetj1@gmail.com', 'IS3LIN'),
+('sarah', 'password123', 'Sarah', 'Aadalen-Aasheim', '41334823', 'sti2711@skole.telemarkfylke.no', 'SRHTNIN'),
+('sturle', 'password123', 'Sturle', 'LastName', '45678901', 'sturle@gmail.com', 'sturleGH');
 
 
 SET SQL_MODE=@OLD_SQL_MODE;

@@ -13,5 +13,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>crm gr2</title>
 	<link rel="stylesheet" href="https://use.typekit.net/idz1bdq.css">
+	<link rel="stylesheet" href="https://use.typekit.net/idz1bdq.css">
 	<link rel="stylesheet" href="../assets/style.css">
 </head>
