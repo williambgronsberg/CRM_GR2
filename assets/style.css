@@ -7,8 +7,6 @@
 :root {
 	--grey: 122, 101, 99;
 	--brown: 211, 165, 136;
-	--white: 236, 226, 208;
-	--mint: 127, 209, 185;
 	--pink: 229, 99, 153;
 	--green: 127, 209, 185;
 }
@@ -276,7 +274,7 @@ nav {
 	font-size: 16px;
 }
 
-.customers-table-container {
+.customers-table-container, #about_us_article {
 	width: 1000px;
 	margin: 40px auto;
 	background: white;
@@ -303,7 +301,7 @@ table.customers-table {
 	text-align: left;
 	font-size: 20px;
 	font-weight: 700;
-	color: rgb(var(--white));
+	color: white;
 	text-shadow: 2px 2px rgb(var(--grey)), -2px -2px rgb(var(--grey)), 2px -2px rgb(var(--grey)), -2px 2px rgb(var(--grey));
 	background: rgb(var(--green));
 }
@@ -318,10 +316,11 @@ table.customers-table {
 	overflow: hidden;
 }
 
-.customers-table tbody td {
+.customers-table tbody td, #about_us_article p {
 	padding: 16px 20px;
 	font-size: 15px;
-	font-family: "Archivo", sans-serif;
+	font-family: "archivo-variable", sans-serif;
+	font-variation-settings: "wdth" 100, "wght" 800;	
 	color: #323232;
 	border: none;
 }
@@ -471,4 +470,43 @@ table.customers-table {
 	width: 100%;
 	margin-top: 10px;
 	box-shadow: 3px 3px #323232;
+}
+
+.grey_background {
+	padding: 18px 20px;
+	text-align: left;
+	font-size: 20px;
+	font-weight: 700;
+	color: white;
+	background: rgb(var(--grey));
+}
+
+.brown_background {
+	padding: 18px 20px;
+	text-align: left;
+	font-size: 20px;
+	font-weight: 700;
+	color: white;
+	text-shadow: 2px 2px rgb(var(--grey)), -2px -2px rgb(var(--grey)), 2px -2px rgb(var(--grey)), -2px 2px rgb(var(--grey));
+	background: rgb(var(--brown));
+}
+
+.green_background {
+	padding: 18px 20px;
+	text-align: left;
+	font-size: 20px;
+	font-weight: 700;
+	color: white;
+	text-shadow: 2px 2px rgb(var(--grey)), -2px -2px rgb(var(--grey)), 2px -2px rgb(var(--grey)), -2px 2px rgb(var(--grey));
+	background: rgb(var(--green));
+}
+
+.pink_background {
+	padding: 18px 20px;
+	text-align: left;
+	font-size: 20px;
+	font-weight: 700;
+	color: white;
+	text-shadow: 2px 2px rgb(var(--grey)), -2px -2px rgb(var(--grey)), 2px -2px rgb(var(--grey)), -2px 2px rgb(var(--grey));
+	background: rgb(var(--pink));
 }
