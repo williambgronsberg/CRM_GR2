@@ -13,7 +13,7 @@ if (isset($_SESSION["username"])) {
 }
 
 $GithubClientId = "Ov23li286sxnmaZBNKV8";
-$RedirectUri    = "http://localhost:8080/CRM_GR2/pages/github_callback.php";
+$RedirectUri    = "http://localhost/CRM_GR2/pages/github_callback.php";
 
 // GitHub OAuth redirect
 if (isset($_GET["github"])) {
