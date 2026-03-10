@@ -301,17 +301,11 @@ table.customers-table {
 .customers-table thead th {
 	padding: 18px 20px;
 	text-align: left;
-	font-size: 16px;
+	font-size: 20px;
 	font-weight: 700;
-	color: rgb(var(--pink));
+	color: rgb(var(--white));
+	text-shadow: 2px 2px rgb(var(--grey)), -2px -2px rgb(var(--grey)), 2px -2px rgb(var(--grey)), -2px 2px rgb(var(--grey));
 	background: rgb(var(--green));
-}
-
-.customers-table tbody td {
-	padding: 16px 20px;
-	font-size: 15px;
-	color: #323232;
-	border-bottom: 1px solid #ddd;
 }
 
 .customers-table-container {
@@ -327,7 +321,8 @@ table.customers-table {
 .customers-table tbody td {
 	padding: 16px 20px;
 	font-size: 15px;
-	font-family: "Archivo", sans-serif;
+	font-family: "archivo-variable", sans-serif;
+	font-variation-settings: "wdth" 100, "wght" 800;
 	color: #323232;
 	border: none;
 }
@@ -359,6 +354,8 @@ table.customers-table {
 }
 
 .btn-add {
+	font-family: "archivo-variable", sans-serif;
+	font-variation-settings: "wdth" 100, "wght" 800;	
 	background: rgb(var(--green));
 	color: white;
 	padding: 12px 24px;
