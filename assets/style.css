@@ -2,13 +2,11 @@
  * @Author: William Berge Groensberg
  * @Date:   2026-03-03 09:18:02
  * @Last Modified by:   William Berge Groensberg
- * @Last Modified time: 2026-03-07 22:02:48
+ * @Last Modified time: 2026-03-10 11:00:03
  */
 :root {
 	--grey: 122, 101, 99;
 	--brown: 211, 165, 136;
-	--white: 236, 226, 208;
-	--mint: 127, 209, 185;
 	--pink: 229, 99, 153;
 	--green: 127, 209, 185;
 }
@@ -276,7 +274,7 @@ nav {
 	font-size: 16px;
 }
 
-.customers-table-container {
+.customers-table-container, #about_us_article {
 	width: 1000px;
 	margin: 40px auto;
 	background: white;
@@ -303,7 +301,7 @@ table.customers-table {
 	text-align: left;
 	font-size: 20px;
 	font-weight: 700;
-	color: rgb(var(--white));
+	color: white;
 	text-shadow: 2px 2px rgb(var(--grey)), -2px -2px rgb(var(--grey)), 2px -2px rgb(var(--grey)), -2px 2px rgb(var(--grey));
 	background: rgb(var(--green));
 }
@@ -318,10 +316,11 @@ table.customers-table {
 	overflow: hidden;
 }
 
-.customers-table tbody td {
+.customers-table tbody td, #about_us_article p {
 	padding: 16px 20px;
 	font-size: 15px;
-	font-family: "Archivo", sans-serif;
+	font-family: "archivo-variable", sans-serif;
+	font-variation-settings: "wdth" 100, "wght" 800;	
 	color: #323232;
 	border: none;
 }
@@ -352,9 +351,14 @@ table.customers-table {
 	color: white;
 }
 
+.btn-action.btn-delete {
+	background: #e74c3c;
+	color: white;
+}
+
 .btn-add {
 	font-family: "archivo-variable", sans-serif;
-	font-variation-settings: "wdth" 100, "wght" 800;	
+	font-variation-settings: "wdth" 100, "wght" 800;
 	background: rgb(var(--green));
 	color: white;
 	padding: 12px 24px;
@@ -461,7 +465,7 @@ table.customers-table {
 }
 
 .modal-content .btn-submit {
-	background: rgb(var(--green));
+	background: rgb(var(--brown));
 	color: white;
 	padding: 12px 24px;
 	border: 2px solid #323232;
@@ -471,4 +475,62 @@ table.customers-table {
 	width: 100%;
 	margin-top: 10px;
 	box-shadow: 3px 3px #323232;
+}
+
+.btn-submit:hover {
+	background: #5c9785;
+}
+
+.btn-delete {
+	background: rgb(var(--pink));
+	color: white;
+	padding: 12px 24px;
+	border: 2px solid #323232;
+	border-radius: 8px;
+	font-size: 16px;
+	cursor: pointer;
+	width: 100%;
+	margin-top: 10px;
+	box-shadow: 3px 3px #323232;
+}
+
+.btn-delete:hover {
+	background: rgb(131, 0, 0);
+.grey_background {
+	padding: 18px 20px;
+	text-align: left;
+	font-size: 20px;
+	font-weight: 700;
+	color: white;
+	background: rgb(var(--grey));
+}
+
+.brown_background {
+	padding: 18px 20px;
+	text-align: left;
+	font-size: 20px;
+	font-weight: 700;
+	color: white;
+	text-shadow: 2px 2px rgb(var(--grey)), -2px -2px rgb(var(--grey)), 2px -2px rgb(var(--grey)), -2px 2px rgb(var(--grey));
+	background: rgb(var(--brown));
+}
+
+.green_background {
+	padding: 18px 20px;
+	text-align: left;
+	font-size: 20px;
+	font-weight: 700;
+	color: white;
+	text-shadow: 2px 2px rgb(var(--grey)), -2px -2px rgb(var(--grey)), 2px -2px rgb(var(--grey)), -2px 2px rgb(var(--grey));
+	background: rgb(var(--green));
+}
+
+.pink_background {
+	padding: 18px 20px;
+	text-align: left;
+	font-size: 20px;
+	font-weight: 700;
+	color: white;
+	text-shadow: 2px 2px rgb(var(--grey)), -2px -2px rgb(var(--grey)), 2px -2px rgb(var(--grey)), -2px 2px rgb(var(--grey));
+	background: rgb(var(--pink));
 }
