@@ -33,8 +33,7 @@ $Sql = "SELECT * FROM contact_person ORDER BY $column $sort_type";
 $Stmt = $Pdo -> prepare($Sql);
 $Stmt -> execute();
 
-$person = $Stmt->fetchAll(PDO::FETCH_ASSOC);
-
+$people = $Stmt->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
@@ -53,10 +52,39 @@ $person = $Stmt->fetchAll(PDO::FETCH_ASSOC);
 <main>
     <section>
         <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-            <p>Sorterings type: <?php $text_sort_type = $sort_type?></p>
+            <p>Sorterings type: <?php $text_sort_type = $sort_type == "ASC" ? "Stigende" : "Synkende";
+            echo $text_sort_type ?></p>
+            <label for="asc_sort_type">Stigende:</label>
+            <input type="submit" value="Stigende" name="asc_sort_type">
 
-
+            <label for="desc_sort_type">Synkende:</label>
+            <input type="submit" value="Synkende" name="desc_sort_type">
         </form>
+
+        <table>
+            <thead>
+                <th>Fornavn</th>
+                <th>Etternavn</th>
+                <th>Telefonnummer</th>
+                <th>E-mail</th>
+                <th>Handlinger</th>
+            </thead>
+            <tr>
+                <?php foreach ($people as $person): ?>
+                    {
+                        <tr>
+                            <td><?php echo htmlspecialchars($person['first_name']); ?></td>
+                            <td><?php echo htmlspecialchars($person['last_name']); ?></td>
+                            <td><?php echo htmlspecialchars($person['phone_number']); ?></td>
+                            <td><?php echo htmlspecialchars($person['email']); ?></td>
+                        </tr>
+                    }
+                <?php endforeach; ?>    
+                
+
+            </tr>
+        </table>
+
     </section>
 </main>   
 
