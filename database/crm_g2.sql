@@ -84,10 +84,10 @@ ENGINE = InnoDB;
 INSERT INTO `crm_g2`.`accounts` 
 (`username`, `password`, `first_name`, `last_name`, `phone_number`, `email`, `github_username`) 
 VALUES
-('william', 'password123', 'William', 'Berge', '12345678', 'william@example.com', 'williamGH'),
-('iselin', 'password123', 'Iselin', 'LastName', '23456789', 'iselin@example.com', 'iselinGH'),
-('sarah', 'password123', 'Sarah', 'LastName', '34567890', 'sarah@example.com', 'sarahGH'),
-('sturle', 'password123', 'Sturle', 'LastName', '45678901', 'sturle@example.com', 'sturleGH');
+('william', 'password123', 'William', 'Berge Grønsberg', '91131101', 'william@gmail.com', 'sneakyturtle270508'),
+('iselin', 'password123', 'Iselin', 'Johnsen', '46841520', 'isetj1@gmail.com', 'IS3LIN'),
+('sarah', 'password123', 'Sarah', Aadalen-Aasheim', '41334823', 'sti2711@skole.telemarkfylke.no', 'SRHTNIN'),
+('sturle', 'password123', 'Sturle', 'LastName', '45678901', 'sturle@gmail.com', 'sturleGH');
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
