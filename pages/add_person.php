@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <?php include '/pieces/head.php'?>
+    <link rel="stylesheet" href="../assets/style.css">
+    <?php include 'pieces/head.php'?>
     <title>crm_g2</title>
 </head>
 <body>
-    <?php include '/pieces/nav.php'?>    
+    <?php include 'pieces/nav.php'?>    
     <header>
         <h1>Registrer kontaktperson</h1>
     </header>
     <main>
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" >
 
             <label for="first_name">Fornavn</label>
             <input name="first_name" id="first_name" type="text" placeholder="Skriv fornavnet ditt her..." required> <br> <br>
@@ -40,7 +41,7 @@
 <?php
 
 if (isset($_POST["new_person"]) && $_SERVER["REQUEST_METHOD"] == "POST") {
-    include '/pieces/connect.php';
+    include '../database/connect.php';
 
     $user_id = $_POST['user_id'];
     $first_name = $_POST['first_name'];
