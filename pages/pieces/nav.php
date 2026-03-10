@@ -30,7 +30,7 @@ if ($firstName && $lastName) {
 ?>
 
 <nav>
-	<div class="nav-logo">Crm gr2</div>
+	<div class="nav-logo">Frisk AS</div>
 	<div class="nav-links">
 		<a href="list_customers.php">bedrifter</a>
 		<a href="about_us.php">Om oss</a>
