@@ -2,7 +2,7 @@
  * @Author: William Berge Groensberg
  * @Date:   2026-03-03 09:18:02
  * @Last Modified by:   William Berge Groensberg
- * @Last Modified time: 2026-03-07 22:02:48
+ * @Last Modified time: 2026-03-10 11:00:03
  */
 :root {
 	--grey: 122, 101, 99;
@@ -351,9 +351,14 @@ table.customers-table {
 	color: white;
 }
 
+.btn-action.btn-delete {
+	background: #e74c3c;
+	color: white;
+}
+
 .btn-add {
 	font-family: "archivo-variable", sans-serif;
-	font-variation-settings: "wdth" 100, "wght" 800;	
+	font-variation-settings: "wdth" 100, "wght" 800;
 	background: rgb(var(--green));
 	color: white;
 	padding: 12px 24px;
@@ -460,7 +465,7 @@ table.customers-table {
 }
 
 .modal-content .btn-submit {
-	background: rgb(var(--green));
+	background: rgb(var(--brown));
 	color: white;
 	padding: 12px 24px;
 	border: 2px solid #323232;
@@ -472,6 +477,25 @@ table.customers-table {
 	box-shadow: 3px 3px #323232;
 }
 
+.btn-submit:hover {
+	background: #5c9785;
+}
+
+.btn-delete {
+	background: rgb(var(--pink));
+	color: white;
+	padding: 12px 24px;
+	border: 2px solid #323232;
+	border-radius: 8px;
+	font-size: 16px;
+	cursor: pointer;
+	width: 100%;
+	margin-top: 10px;
+	box-shadow: 3px 3px #323232;
+}
+
+.btn-delete:hover {
+	background: rgb(131, 0, 0);
 .grey_background {
 	padding: 18px 20px;
 	text-align: left;
