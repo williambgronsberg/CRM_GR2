@@ -1,0 +1,251 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="2460" viewBox="0 0 900 2460">
+  <defs>
+    <style>
+      text { font-family: Arial, sans-serif; }
+      .mono { font-family: 'Courier New', monospace; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="2460" fill="rgb(229,99,153)"/>
+
+  <!-- NAV -->
+  <rect x="0" y="0" width="900" height="72" fill="rgb(210,75,135)"/>
+  <text x="48" y="44" font-size="24" font-weight="700" fill="white" letter-spacing="3">Frisk as</text>
+  <text x="600" y="44" font-size="14" fill="white" opacity="0.85">bedrifter</text>
+  <text x="700" y="44" font-size="14" fill="white" opacity="0.85">Om oss</text>
+  <circle cx="848" cy="36" r="24" fill="rgb(100,80,78)" stroke="rgba(255,255,255,0.3)" stroke-width="2.5"/>
+  <text x="848" y="42" font-size="12" font-weight="700" fill="rgb(211,165,136)" text-anchor="middle">AD</text>
+
+  <!-- HERO -->
+  <rect x="0" y="72" width="900" height="160" fill="rgb(219,79,143)"/>
+  <text x="450" y="148" font-size="60" font-weight="700" fill="white" text-anchor="middle" letter-spacing="6">Frisk as</text>
+  <text x="450" y="190" font-size="14" fill="white" text-anchor="middle" opacity="0.75" letter-spacing="1">Et enkelt CRM-prosjekt for kunde- og personadministrasjon — bygget i PHP</text>
+  <rect x="0" y="232" width="900" height="4" fill="rgb(200,60,120)" opacity="0.4"/>
+
+  <!-- Badges -->
+  <rect x="148" y="250" width="92" height="24" rx="12" fill="rgba(0,0,0,0.18)" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
+  <text x="194" y="267" font-size="11" font-weight="700" fill="white" text-anchor="middle">PHP 8.0+</text>
+  <rect x="250" y="250" width="74" height="24" rx="12" fill="rgba(0,0,0,0.18)" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
+  <text x="287" y="267" font-size="11" font-weight="700" fill="white" text-anchor="middle">MySQL</text>
+  <rect x="334" y="250" width="56" height="24" rx="12" fill="rgba(0,0,0,0.18)" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
+  <text x="362" y="267" font-size="11" font-weight="700" fill="white" text-anchor="middle">PDO</text>
+  <rect x="400" y="250" width="126" height="24" rx="12" fill="rgba(0,0,0,0.18)" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
+  <text x="463" y="267" font-size="11" font-weight="700" fill="white" text-anchor="middle">GitHub OAuth</text>
+  <rect x="536" y="250" width="130" height="24" rx="12" fill="rgba(0,0,0,0.18)" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
+  <text x="601" y="267" font-size="11" font-weight="700" fill="white" text-anchor="middle">Apache / XAMPP</text>
+  <rect x="676" y="250" width="80" height="24" rx="12" fill="rgba(0,0,0,0.18)" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
+  <text x="716" y="267" font-size="11" font-weight="700" fill="white" text-anchor="middle">Sessions</text>
+
+  <!-- ===== CARD: Om prosjektet  y=288  h=112 ===== -->
+  <rect x="48" y="296" width="804" height="112" rx="16" fill="#282828"/>
+  <rect x="40" y="288" width="804" height="112" rx="16" fill="rgb(127,209,185)" stroke="#282828" stroke-width="4"/>
+  <text x="62" y="316" font-size="16" font-weight="700" fill="white" letter-spacing="1">OM PROSJEKTET</text>
+  <line x1="62" y1="324" x2="828" y2="324" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/>
+  <text x="62" y="346" font-size="12" fill="white" opacity="0.9">Frisk as crm er en webapplikasjon bygget i PHP for administrasjon av kunder og kontaktpersoner.</text>
+  <text x="62" y="364" font-size="12" fill="white" opacity="0.9">Systemet bruker PDO for sikker kommunikasjon med en MySQL-database, og støtter innlogging</text>
+  <text x="62" y="382" font-size="12" fill="white" opacity="0.9">via tradisjonelt brukernavn/passord med bcrypt-hashing, samt GitHub OAuth for enkel tilgang.</text>
+
+  <!-- ===== CARD: Funksjoner  y=420  h=208 ===== -->
+  <rect x="48" y="428" width="804" height="208" rx="16" fill="#282828"/>
+  <rect x="40" y="420" width="804" height="208" rx="16" fill="rgb(127,209,185)" stroke="#282828" stroke-width="4"/>
+  <text x="62" y="448" font-size="16" font-weight="700" fill="white" letter-spacing="1">FUNKSJONER</text>
+  <line x1="62" y1="456" x2="828" y2="456" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/>
+
+  <rect x="56" y="464" width="382" height="52" rx="10" fill="rgba(0,0,0,0.15)" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+  <text x="72" y="484" font-size="12" font-weight="700" fill="white">Kundeadministrasjon</text>
+  <text x="72" y="502" font-size="11" fill="white" opacity="0.75">Legg til, rediger og slett bedriftskunder</text>
+  <rect x="450" y="464" width="382" height="52" rx="10" fill="rgba(0,0,0,0.15)" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+  <text x="466" y="484" font-size="12" font-weight="700" fill="white">Profiladministrasjon</text>
+  <text x="466" y="502" font-size="11" fill="white" opacity="0.75">Oppdater navn, epost, telefon og passord</text>
+
+  <rect x="56" y="524" width="382" height="52" rx="10" fill="rgba(0,0,0,0.15)" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+  <text x="72" y="544" font-size="12" font-weight="700" fill="white">Kontaktpersoner</text>
+  <text x="72" y="562" font-size="11" fill="white" opacity="0.75">Koble kontaktpersoner til kunder via relasjonstabel</text>
+  <rect x="450" y="524" width="382" height="52" rx="10" fill="rgba(0,0,0,0.15)" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+  <text x="466" y="544" font-size="12" font-weight="700" fill="white">Sesjonshåndtering</text>
+  <text x="466" y="562" font-size="11" fill="white" opacity="0.75">PHP-sesjoner med auth_check på alle beskyttede sider</text>
+
+  <rect x="56" y="584" width="382" height="52" rx="10" fill="rgba(0,0,0,0.15)" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+  <text x="72" y="604" font-size="12" font-weight="700" fill="white">Autentisering</text>
+  <text x="72" y="622" font-size="11" fill="white" opacity="0.75">Innlogging med bcrypt-hashet passord eller GitHub OAuth</text>
+  <rect x="450" y="584" width="382" height="52" rx="10" fill="rgba(0,0,0,0.15)" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+  <text x="466" y="604" font-size="12" font-weight="700" fill="white">Gjenbrukbare komponenter</text>
+  <text x="466" y="622" font-size="11" fill="white" opacity="0.75">Delt nav, head og footer via PHP includes</text>
+
+  <!-- ===== CARD: Prosjektstruktur
+       27 lines × 22px = 594px content
+       top padding 30 + header 46 + inner padding 20 top + 20 bottom = 116
+       total inner rect height = 614
+       card height = 614 + 116 = 730
+       y=648
+  ===== -->
+  <rect x="48" y="656" width="804" height="730" rx="16" fill="#282828"/>
+  <rect x="40" y="648" width="804" height="730" rx="16" fill="rgb(127,209,185)" stroke="#282828" stroke-width="4"/>
+  <text x="62" y="676" font-size="16" font-weight="700" fill="white" letter-spacing="1">PROSJEKTSTRUKTUR</text>
+  <line x1="62" y1="684" x2="828" y2="684" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/>
+  <!-- inner code box: y=692, height=676 -->
+  <rect x="56" y="692" width="776" height="676" rx="10" fill="#1e1e1e" stroke="rgba(255,255,255,0.1)" stroke-width="1.5"/>
+
+  <!-- 27 lines, starting y=716, step=22 -->
+  <text x="76" y="716"  font-size="13" class="mono" fill="#888">.</text>
+  <text x="76" y="738"  font-size="13" class="mono" fill="#ccc">├── index.php</text>
+  <text x="76" y="760"  font-size="13" class="mono" fill="rgb(127,209,185)">├── assets/</text>
+  <text x="76" y="782"  font-size="13" class="mono" fill="#888">│   └── style.css</text>
+  <text x="76" y="804"  font-size="13" class="mono" fill="rgb(127,209,185)">├── database/</text>
+  <text x="76" y="826"  font-size="13" class="mono" fill="#888">│   ├── connect.php</text>
+  <text x="76" y="848"  font-size="13" class="mono" fill="#888">│   └── crm_g2.sql</text>
+  <text x="76" y="870"  font-size="13" class="mono" fill="rgb(127,209,185)">├── pages/</text>
+  <text x="76" y="892"  font-size="13" class="mono" fill="#888">│   ├── login.php</text>
+  <text x="76" y="914"  font-size="13" class="mono" fill="#888">│   ├── register.php</text>
+  <text x="76" y="936"  font-size="13" class="mono" fill="#888">│   ├── logout.php</text>
+  <text x="76" y="958"  font-size="13" class="mono" fill="#888">│   ├── auth_check.php</text>
+  <text x="76" y="980"  font-size="13" class="mono" fill="#888">│   ├── github_callback.php</text>
+  <text x="76" y="1002" font-size="13" class="mono" fill="#888">│   ├── about_us.php</text>
+  <text x="76" y="1024" font-size="13" class="mono" fill="#888">│   ├── update_account.php</text>
+  <text x="76" y="1046" font-size="13" class="mono" fill="#888">│   ├── list_customers.php</text>
+  <text x="76" y="1068" font-size="13" class="mono" fill="#888">│   ├── add_customer.php</text>
+  <text x="76" y="1090" font-size="13" class="mono" fill="#888">│   ├── update_customer.php</text>
+  <text x="76" y="1112" font-size="13" class="mono" fill="#888">│   ├── delete_customer.php</text>
+  <text x="76" y="1134" font-size="13" class="mono" fill="#888">│   ├── list_people.php</text>
+  <text x="76" y="1156" font-size="13" class="mono" fill="#888">│   ├── add_person.php</text>
+  <text x="76" y="1178" font-size="13" class="mono" fill="#888">│   ├── update_person.php</text>
+  <text x="76" y="1200" font-size="13" class="mono" fill="#888">│   ├── delete_person.php</text>
+  <text x="76" y="1222" font-size="13" class="mono" fill="rgb(127,209,185)">│   └── pieces/</text>
+  <text x="76" y="1244" font-size="13" class="mono" fill="#888">│       ├── head.php</text>
+  <text x="76" y="1266" font-size="13" class="mono" fill="#888">│       ├── nav.php</text>
+  <text x="76" y="1288" font-size="13" class="mono" fill="#888">│       └── footer.php</text>
+  <text x="76" y="1310" font-size="13" class="mono" fill="rgb(127,209,185)">└── Details/</text>
+  <text x="76" y="1332" font-size="13" class="mono" fill="#888">    ├── Kravspesifikasjon.docx</text>
+  <text x="76" y="1354" font-size="13" class="mono" fill="#888">    └── TekniskeDetaljer.docx</text>
+
+  <!-- ===== CARD: Database  y=1396  h=180 ===== -->
+  <rect x="48" y="1404" width="804" height="180" rx="16" fill="#282828"/>
+  <rect x="40" y="1396" width="804" height="180" rx="16" fill="rgb(127,209,185)" stroke="#282828" stroke-width="4"/>
+  <text x="62" y="1424" font-size="16" font-weight="700" fill="white" letter-spacing="1">DATABASE</text>
+  <line x1="62" y1="1432" x2="828" y2="1432" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/>
+  <text x="62" y="1456" font-size="12" fill="white" opacity="0.9">Databasen heter crm_g2 og inneholder fire tabeller:</text>
+
+  <rect x="56" y="1464" width="184" height="100" rx="10" fill="rgba(0,0,0,0.15)" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+  <text x="148" y="1488" font-size="12" font-weight="700" fill="white" text-anchor="middle">customer</text>
+  <text x="148" y="1506" font-size="11" fill="white" opacity="0.7" text-anchor="middle">customer_id, name</text>
+  <text x="148" y="1522" font-size="11" fill="white" opacity="0.7" text-anchor="middle">address, phone_number</text>
+  <text x="148" y="1538" font-size="11" fill="white" opacity="0.7" text-anchor="middle">kunde_siden</text>
+
+  <rect x="252" y="1464" width="184" height="100" rx="10" fill="rgba(0,0,0,0.15)" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+  <text x="344" y="1488" font-size="12" font-weight="700" fill="white" text-anchor="middle">contact_person</text>
+  <text x="344" y="1506" font-size="11" fill="white" opacity="0.7" text-anchor="middle">user_id, first_name</text>
+  <text x="344" y="1522" font-size="11" fill="white" opacity="0.7" text-anchor="middle">last_name, phone_number</text>
+  <text x="344" y="1538" font-size="11" fill="white" opacity="0.7" text-anchor="middle">email</text>
+
+  <rect x="448" y="1464" width="184" height="100" rx="10" fill="rgba(0,0,0,0.15)" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+  <text x="540" y="1488" font-size="12" font-weight="700" fill="white" text-anchor="middle">customer_has_user</text>
+  <text x="540" y="1506" font-size="11" fill="white" opacity="0.7" text-anchor="middle">customer_id (FK)</text>
+  <text x="540" y="1522" font-size="11" fill="white" opacity="0.7" text-anchor="middle">user_id (FK)</text>
+  <text x="540" y="1538" font-size="11" fill="white" opacity="0.7" text-anchor="middle">many-to-many</text>
+
+  <rect x="644" y="1464" width="184" height="100" rx="10" fill="rgba(0,0,0,0.15)" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+  <text x="736" y="1488" font-size="12" font-weight="700" fill="white" text-anchor="middle">accounts</text>
+  <text x="736" y="1506" font-size="11" fill="white" opacity="0.7" text-anchor="middle">username, password</text>
+  <text x="736" y="1522" font-size="11" fill="white" opacity="0.7" text-anchor="middle">first_name, last_name</text>
+  <text x="736" y="1538" font-size="11" fill="white" opacity="0.7" text-anchor="middle">email, github_username</text>
+
+  <!-- ===== CARD: Kom i gang  y=1594  h=286 ===== -->
+  <rect x="48" y="1602" width="804" height="286" rx="16" fill="#282828"/>
+  <rect x="40" y="1594" width="804" height="286" rx="16" fill="rgb(127,209,185)" stroke="#282828" stroke-width="4"/>
+  <text x="62" y="1622" font-size="16" font-weight="700" fill="white" letter-spacing="1">KOM I GANG</text>
+  <line x1="62" y1="1630" x2="828" y2="1630" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/>
+
+  <text x="62" y="1654" font-size="11" font-weight="700" fill="white" opacity="0.6" letter-spacing="1">STEG 1 — KLON REPOET</text>
+  <rect x="56" y="1662" width="776" height="30" rx="7" fill="#1e1e1e" stroke="rgba(255,255,255,0.1)" stroke-width="1.5"/>
+  <text x="72" y="1682" font-size="12" class="mono" fill="rgb(127,209,185)">git clone https://github.com/dittbrukernavn/CRM_GR2.git &amp;&amp; cd CRM_GR2</text>
+
+  <text x="62" y="1710" font-size="11" font-weight="700" fill="white" opacity="0.6" letter-spacing="1">STEG 2 — IMPORTER DATABASE</text>
+  <rect x="56" y="1718" width="776" height="30" rx="7" fill="#1e1e1e" stroke="rgba(255,255,255,0.1)" stroke-width="1.5"/>
+  <text x="72" y="1738" font-size="12" class="mono" fill="rgb(127,209,185)">mysql -u root -p &lt; database/crm_g2.sql</text>
+
+  <text x="62" y="1766" font-size="11" font-weight="700" fill="white" opacity="0.6" letter-spacing="1">STEG 3 — START SERVER</text>
+  <rect x="56" y="1774" width="776" height="30" rx="7" fill="#1e1e1e" stroke="rgba(255,255,255,0.1)" stroke-width="1.5"/>
+  <text x="72" y="1794" font-size="12" class="mono" fill="rgb(127,209,185)">php -S localhost:8000</text>
+
+  <text x="62" y="1822" font-size="11" font-weight="700" fill="white" opacity="0.6" letter-spacing="1">STEG 4 — ÅPNE I NETTLESER</text>
+  <rect x="56" y="1830" width="776" height="30" rx="7" fill="#1e1e1e" stroke="rgba(255,255,255,0.1)" stroke-width="1.5"/>
+  <text x="72" y="1850" font-size="12" class="mono" fill="rgb(127,209,185)">http://localhost:8000</text>
+
+  <text x="62" y="1868" font-size="11" fill="white" opacity="0.65">NB: GitHub OAuth krever at redirect_uri i github_callback.php matcher din registrerte OAuth-app på github.com/settings/developers</text>
+
+  <!-- ===== CARD: Status  y=1898  h=298 ===== -->
+  <rect x="48" y="1906" width="804" height="298" rx="16" fill="#282828"/>
+  <rect x="40" y="1898" width="804" height="298" rx="16" fill="rgb(127,209,185)" stroke="#282828" stroke-width="4"/>
+  <text x="62" y="1926" font-size="16" font-weight="700" fill="white" letter-spacing="1">STATUS</text>
+  <line x1="62" y1="1934" x2="828" y2="1934" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/>
+
+  <rect x="56" y="1942" width="776" height="26" rx="6" fill="rgba(0,0,0,0.2)"/>
+  <text x="90" y="1959" font-size="11" font-weight="700" fill="white" opacity="0.6" letter-spacing="1">FUNKSJON</text>
+  <text x="710" y="1959" font-size="11" font-weight="700" fill="white" opacity="0.6" letter-spacing="1" text-anchor="middle">STATUS</text>
+
+  <line x1="56" y1="1968" x2="832" y2="1968" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <text x="90" y="1988" font-size="12" fill="white">Autentisering — login, register, GitHub OAuth, bcrypt</text>
+  <circle cx="710" cy="1983" r="7" fill="#5dde8a"/>
+  <text x="724" y="1988" font-size="11" fill="#5dde8a">Ferdig</text>
+
+  <line x1="56" y1="1998" x2="832" y2="1998" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <text x="90" y="2018" font-size="12" fill="white">Kundeliste med modal for innlegging av nye kunder</text>
+  <circle cx="710" cy="2013" r="7" fill="#5dde8a"/>
+  <text x="724" y="2018" font-size="11" fill="#5dde8a">Ferdig</text>
+
+  <line x1="56" y1="2028" x2="832" y2="2028" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <text x="90" y="2048" font-size="12" fill="white">Profilvisning, redigering og passordbytting</text>
+  <circle cx="710" cy="2043" r="7" fill="#5dde8a"/>
+  <text x="724" y="2048" font-size="11" fill="#5dde8a">Ferdig</text>
+
+  <line x1="56" y1="2058" x2="832" y2="2058" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <text x="90" y="2078" font-size="12" fill="white">Navigasjonsbar med profilmodal og utlogging</text>
+  <circle cx="710" cy="2073" r="7" fill="#5dde8a"/>
+  <text x="724" y="2078" font-size="11" fill="#5dde8a">Ferdig</text>
+
+  <line x1="56" y1="2088" x2="832" y2="2088" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <text x="90" y="2108" font-size="12" fill="white">Oppdater og slett kunde — update_customer, delete_customer</text>
+  <circle cx="710" cy="2103" r="7" fill="rgb(211,165,136)"/>
+  <text x="724" y="2108" font-size="11" fill="rgb(211,165,136)">Pågår</text>
+
+  <line x1="56" y1="2118" x2="832" y2="2118" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <text x="90" y="2138" font-size="12" fill="white">Kontaktpersoner — full CRUD og kobling til kunde</text>
+  <circle cx="710" cy="2133" r="7" fill="rgb(211,165,136)"/>
+  <text x="724" y="2138" font-size="11" fill="rgb(211,165,136)">Pågår</text>
+
+  <line x1="56" y1="2148" x2="832" y2="2148" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <text x="90" y="2168" font-size="12" fill="white">Om oss-side</text>
+  <circle cx="710" cy="2163" r="7" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/>
+  <text x="724" y="2168" font-size="11" fill="rgba(255,255,255,0.55)">Ikke startet</text>
+
+  <!-- ===== CARD: Forfattere  y=2214  h=148 ===== -->
+  <rect x="48" y="2230" width="804" height="148" rx="16" fill="#282828"/>
+  <rect x="40" y="2222" width="804" height="148" rx="16" fill="rgb(127,209,185)" stroke="#282828" stroke-width="4"/>
+  <text x="62" y="2250" font-size="16" font-weight="700" fill="white" letter-spacing="1">FORFATTERE</text>
+  <line x1="62" y1="2258" x2="828" y2="2258" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/>
+
+  <rect x="56" y="2270" width="244" height="68" rx="12" fill="rgba(0,0,0,0.15)" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+  <circle cx="86" cy="2304" r="18" fill="rgb(100,80,78)" stroke="#282828" stroke-width="2"/>
+  <text x="86" y="2310" font-size="10" font-weight="700" fill="rgb(211,165,136)" text-anchor="middle">WG</text>
+  <text x="114" y="2298" font-size="13" font-weight="700" fill="white">William Berge Groensberg</text>
+  <text x="114" y="2316" font-size="11" fill="white" opacity="0.6">GitHub OAuth / Frontend / Backend</text>
+
+  <rect x="322" y="2270" width="244" height="68" rx="12" fill="rgba(0,0,0,0.15)" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+  <circle cx="352" cy="2304" r="18" fill="rgb(80,100,78)" stroke="#282828" stroke-width="2"/>
+  <text x="352" y="2310" font-size="10" font-weight="700" fill="rgb(185,211,165)" text-anchor="middle">I</text>
+  <text x="380" y="2298" font-size="13" font-weight="700" fill="white">Iselin</text>
+  <text x="380" y="2316" font-size="11" fill="white" opacity="0.6">Databse / Backend</text>
+
+  <rect x="588" y="2270" width="244" height="68" rx="12" fill="rgba(0,0,0,0.15)" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+  <circle cx="618" cy="2304" r="18" fill="rgb(78,80,110)" stroke="#282828" stroke-width="2"/>
+  <text x="618" y="2310" font-size="10" font-weight="700" fill="rgb(165,185,211)" text-anchor="middle">S</text>
+  <text x="646" y="2298" font-size="13" font-weight="700" fill="white">Sarah</text>
+  <text x="646" y="2316" font-size="11" fill="white" opacity="0.6">Backend</text>
+
+  <text x="450" y="2358" font-size="11" fill="white" opacity="0.5" text-anchor="middle">Sist oppdatert: 2026-03-07  —  Ingen lisens spesifisert</text>
+
+  <!-- Footer -->
+  <rect x="0" y="2390" width="900" height="1.5" fill="rgba(255,255,255,0.15)"/>
+  <text x="450" y="2418" font-size="10" fill="rgba(255,255,255,0.35)" text-anchor="middle" letter-spacing="3">CRM GR2 — WILLIAM BERGE GROENSBERG · ISELIN · SARAH — 2026</text>
+</svg>
