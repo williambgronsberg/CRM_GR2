@@ -321,7 +321,8 @@ table.customers-table {
 .customers-table tbody td {
 	padding: 16px 20px;
 	font-size: 15px;
-	font-family: "Archivo", sans-serif;
+	font-family: "archivo-variable", sans-serif;
+	font-variation-settings: "wdth" 100, "wght" 800;	
 	color: #323232;
 	border: none;
 }
