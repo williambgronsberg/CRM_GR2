@@ -277,7 +277,7 @@ nav {
 }
 
 .customers-table-container {
-	width: 800px;
+	width: 1000px;
 	margin: 40px auto;
 	background: white;
 	border-radius: 16px;
@@ -315,7 +315,7 @@ table.customers-table {
 }
 
 .customers-table-container {
-	width: 800px;
+	width: 1000px;
 	margin: 40px auto;
 	background: white;
 	border-radius: 16px;
@@ -327,6 +327,7 @@ table.customers-table {
 .customers-table tbody td {
 	padding: 16px 20px;
 	font-size: 15px;
+	font-family: "Archivo", sans-serif;
 	color: #323232;
 	border: none;
 }
@@ -344,6 +345,7 @@ table.customers-table {
 	cursor: pointer;
 	text-decoration: none;
 	box-shadow: 3px 3px #323232;
+	white-space: nowrap;
 }
 
 .btn-action.btn-view {
@@ -366,8 +368,8 @@ table.customers-table {
 	cursor: pointer;
 	display: inline-block;
 	box-shadow: 3px 3px #323232;
-	float: right;
 	margin-bottom: 15px;
+	white-space: nowrap;
 }
 
 .btn-add:hover {
