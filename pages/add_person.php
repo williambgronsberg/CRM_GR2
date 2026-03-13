@@ -43,16 +43,16 @@
 if (isset($_POST["new_person"]) && $_SERVER["REQUEST_METHOD"] == "POST") {
     include '../database/connect.php';
 
-    $user_id = $_POST['user_id'];
+    $person_id = $_POST['person_id'];
     $first_name = $_POST['first_name'];
     $last_name = $_POST['last_name'];
     $phone_number = $_POST['phone_number'];
     $email = $_POST['email'];
 
-    $Sql = "INSERT INTO accounts (user_id, first_name, last_name, phone_number, email) VALUES(:user_id, :first_name, :last_name, :phone_number, :email);";
+    $Sql = "INSERT INTO accounts (person_id, first_name, last_name, phone_number, email) VALUES(:person_id, :first_name, :last_name, :phone_number, :email);";
     $Stmt = $Pdo->prepare($Sql);
 
-    $Stmt->bindParam(":user_id", $user_id);
+    $Stmt->bindParam(":person_id", $person_id);
     $Stmt->bindParam(":first_name", $first_name);
     $Stmt->bindParam(":last_name", $last_name);
     $Stmt->bindParam(":phone_number", $phone_number);

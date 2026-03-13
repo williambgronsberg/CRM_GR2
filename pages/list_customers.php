@@ -63,8 +63,9 @@ $Customers = $Statement->fetchAll(PDO::FETCH_ASSOC);
 <body>
 	<?php include "pieces/nav.php"; ?>
 
-	<div style="width: 1000px; margin: 40px auto;">
-		<div style="text-align: right;">
+	<div style="margin: 15px;">
+		<div class="table-header">
+			<div></div>
 			<button class="btn-add" onclick="document.getElementById('addModal').classList.add('show')">+ Add Customer</button>
 		</div>
 
@@ -88,7 +89,7 @@ $Customers = $Statement->fetchAll(PDO::FETCH_ASSOC);
 							<td><?php echo htmlspecialchars($Customer['kunde_siden']); ?></td>
 							<td>
 								<div class="action-btns">
-									<a href="list_people.php?customer_id=<?php echo $Customer['customer_id']; ?>" class="btn-action btn-edit">Se mer</a>
+									<a href="list_people.php?customer=<?php echo $Customer['customer_id']; ?>" class="btn-action btn-edit">Se mer</a>
 									<button class="btn-action btn-edit" onclick="openUpdateModal(<?php echo $Customer['customer_id']; ?>, '<?php echo htmlspecialchars($Customer['name']); ?>', '<?php echo htmlspecialchars($Customer['address']); ?>', '<?php echo htmlspecialchars($Customer['phone_number']); ?>')">Rediger</button>
 
 								</div>
