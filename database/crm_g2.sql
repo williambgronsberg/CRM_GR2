@@ -87,7 +87,7 @@ VALUES
 ('william', 'password123', 'William', 'Berge Grønsberg', '91131101', 'william@gmail.com', 'sneakyturtle270508'),
 ('iselin', 'password123', 'Iselin', 'Johnsen', '46841520', 'isetj1@gmail.com', 'IS3LIN'),
 ('sarah', 'password123', 'Sarah', 'Aadalen-Aasheim', '41334823', 'sti2711@skole.telemarkfylke.no', 'SRHTNIN'),
-('sturle', 'password123', 'Sturle', 'LastName', '45678901', 'sturle@gmail.com', 'sturleGH');
+('sturle', 'password123', 'Sturle', 'Stiansen', '40606040', 'sturle@gmail.com', 'stusti');
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
