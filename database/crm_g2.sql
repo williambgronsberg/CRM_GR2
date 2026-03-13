@@ -34,12 +34,12 @@ ENGINE = InnoDB;
 -- Table `crm_g2`.`contact_person`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `crm_g2`.`contact_person` (
-  `user_id` INT NOT NULL AUTO_INCREMENT,
+  `person_id` INT NOT NULL AUTO_INCREMENT,
   `first_name` VARCHAR(45) NULL,
   `last_name` VARCHAR(45) NULL,
   `phone_number` VARCHAR(14) NULL,
   `email` VARCHAR(70) NULL,
-  PRIMARY KEY (`user_id`))
+  PRIMARY KEY (`person_id`))
 ENGINE = InnoDB;
 
 
@@ -48,9 +48,9 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `crm_g2`.`customer_has_user` (
   `customer_id` INT NOT NULL,
-  `user_id` INT NOT NULL,
-  PRIMARY KEY (`customer_id`, `user_id`),
-  INDEX `fk_customer_has_user_user1_idx` (`user_id` ASC) ,
+  `person_id` INT NOT NULL,
+  PRIMARY KEY (`customer_id`, `person_id`),
+  INDEX `fk_customer_has_user_user1_idx` (`person_id` ASC) ,
   INDEX `fk_customer_has_user_customer_idx` (`customer_id` ASC) ,
   CONSTRAINT `fk_customer_has_user_customer`
     FOREIGN KEY (`customer_id`)
@@ -58,8 +58,8 @@ CREATE TABLE IF NOT EXISTS `crm_g2`.`customer_has_user` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_customer_has_user_user1`
-    FOREIGN KEY (`user_id`)
-    REFERENCES `crm_g2`.`contact_person` (`user_id`)
+    FOREIGN KEY (`person_id`)
+    REFERENCES `crm_g2`.`contact_person` (`person_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -87,7 +87,7 @@ VALUES
 ('william', 'password123', 'William', 'Berge Grønsberg', '91131101', 'william@gmail.com', 'sneakyturtle270508'),
 ('iselin', 'password123', 'Iselin', 'Johnsen', '46841520', 'isetj1@gmail.com', 'IS3LIN'),
 ('sarah', 'password123', 'Sarah', 'Aadalen-Aasheim', '41334823', 'sti2711@skole.telemarkfylke.no', 'SRHTNIN'),
-('sturle', 'password123', 'Sturle', 'LastName', '45678901', 'sturle@gmail.com', 'sturleGH');
+('sturle', 'password123', 'Sturle', 'Stiansen', '40606040', 'sturle@gmail.com', 'stusti');
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
