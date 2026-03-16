@@ -84,9 +84,11 @@ if (isset($_GET['sort'])) {
 $_SESSION["sort_type"] = $sort_type;
 
 if ($customer_id) {
-    $Sql = "SELECT cp.* FROM contact_person cp 
-            INNER JOIN customer_has_user chu ON cp.person_id = chu.person_id 
-            WHERE chu.customer_id = :customer_id 
+    $Sql = "SELECT contact_person.*
+            FROM contact_person
+            INNER JOIN customer_has_user
+                ON contact_person.person_id = customer_has_user.person_id
+            WHERE customer_has_user.customer_id = :customer_id
             ORDER BY $column $sort_type";
     $Stmt = $Pdo->prepare($Sql);
     $Stmt->execute([":customer_id" => $customer_id]);
