@@ -101,53 +101,9 @@ $Customers = $Statement->fetchAll(PDO::FETCH_ASSOC);
 		</div>
 	</div>
 
-	<div id="addModal" class="modal" onclick="if(event.target === this) this.classList.remove('show')">
-		<div class="modal-content">
-			<span class="close" onclick="document.getElementById('addModal').classList.remove('show')">&times;</span>
-			<h2>Add Customer</h2>
-			<form method="POST">
-				<input type="hidden" name="add_customer" value="1">
-				<div class="form-group">
-					<input type="text" id="name" name="name" placeholder=" " required>
-					<label for="name" class="floating">Name</label>
-				</div>
-				<div class="form-group">
-					<input type="text" id="address" name="address" placeholder=" " required>
-					<label for="address" class="floating">Address</label>
-				</div>
-				<div class="form-group">
-					<input type="text" id="phone_number" name="phone_number" placeholder=" " required>
-					<label for="phone_number" class="floating">Phone Number</label>
-				</div>
-				<button type="submit" class="btn-submit">Add Customer</button>
-			</form>
-		</div>
-	</div>
+	<?php include "add_customer.php"; ?>
 
-	<div id="updateModal" class="modal" onclick="if(event.target === this) this.classList.remove('show')">
-		<div class="modal-content">
-			<span class="close" onclick="document.getElementById('updateModal').classList.remove('show')">&times;</span>
-			<h2>Update Customer</h2>
-			<form method="POST">
-				<input type="hidden" name="update_customer" value="1">
-				<input type="hidden" id="update_id" name="id">
-				<div class="form-group">
-					<input type="text" id="update_name" name="name" placeholder=" " required>
-					<label for="update_name" class="floating">Name</label>
-				</div>
-				<div class="form-group">
-					<input type="text" id="update_address" name="address" placeholder=" " required>
-					<label for="update_address" class="floating">Address</label>
-				</div>
-				<div class="form-group">
-					<input type="text" id="update_phone_number" name="phone_number" placeholder=" " required>
-					<label for="update_phone_number" class="floating">Phone Number</label>
-				</div>
-				<button type="submit" class="btn-submit">Update Customer</button>
-				<button type="button" id="updateDeleteBtn" class="btn-delete" onclick="if(confirm('Are you sure you want to delete this customer?')) { window.location.href='delete_customer.php?id=' + document.getElementById('update_id').value; }" style="display: none;">Delete</button>
-			</form>
-		</div>
-	</div>
+    <?php include "update_customer.php"; ?>
 
 	<script>
 		function openUpdateModal(id, name, address, phone_number) {
