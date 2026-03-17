@@ -21,10 +21,10 @@
             <label for="last_name">Etternavn</label>
             <input name="last_name" id="last_name" type="text" placeholder="Skriv etternavnet ditt her..." required> <br> <br>
 
-            <label for="phone_number">Telefon nummer</label>
+            <label for="phone_number">Telefonnummer</label>
             <input name="phone_number" id="phone_number" type="text" placeholder="Skriv nummeret ditt her..." required> <br> <br>
 
-            <label for="email">Email</label>
+            <label for="email">E-post</label>
             <input name="email" id="email" type="text" placeholder="Skriv emailen din her..." required> <br> <br>
 
             <input type="submit" name="new_person" id="new_person" value="Registrer">
@@ -63,7 +63,7 @@ if (isset($_POST["new_person"]) && $_SERVER["REQUEST_METHOD"] == "POST") {
 			header("Location: list_people.php");
 			exit;
 	} catch (PDOException $e) {
-			$error = "ID already exists or error occurred.";
+			$error = "ID finnes allerede, eller så oppstod det et problem.";
 	}
 
     $Stmt->execute();

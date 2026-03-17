@@ -110,7 +110,6 @@ $people = $Stmt->fetchAll(PDO::FETCH_ASSOC);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/style.css">
     <?php include 'pieces/head.php' ?>
-    <title>crm g2</title>
 </head>
 <body>
     <?php include 'pieces/nav.php' ?>
@@ -118,15 +117,15 @@ $people = $Stmt->fetchAll(PDO::FETCH_ASSOC);
     <div style="margin: 15px;">
         <div class="table-header">
             <?php if ($customer_id && $CurrentCustomer): ?>
-                <h1><?php echo htmlspecialchars($CurrentCustomer['name']); ?> - Contact Persons</h1>
+                <h1><?php echo htmlspecialchars($CurrentCustomer['name']); ?> - Kontaktperson</h1>
             <?php else: ?>
-                <h1>All Contact Persons</h1>
+                <h1>Alle kontaktpersoner</h1>
             <?php endif; ?>
             <div class="table-actions">
                 <?php if ($customer_id && $CurrentCustomer): ?>
-                    <a href="list_customers.php" class="btn-back">&larr; Back</a>
+                    <a href="list_customers.php" class="btn-back">&larr; Tilbake</a>
                 <?php endif; ?>
-                <button class="btn-add" onclick="document.getElementById('addModal').classList.add('show')">+ Add Person</button>
+                <button class="btn-add" onclick="document.getElementById('addModal').classList.add('show')">+ Ny kontaktperson</button>
             </div>
         </div>
 
@@ -137,7 +136,7 @@ $people = $Stmt->fetchAll(PDO::FETCH_ASSOC);
                         <th><a href="?<?php echo $customer_id ? 'customer='.$customer_id.'&' : ''; ?>column=first_name&sort=<?php echo $sort_type == 'ASC' ? 'DESC' : 'ASC'; ?>" style="color: white; text-decoration: none;">Fornavn <?php echo $column == 'first_name' ? ($sort_type == 'ASC' ? '↑' : '↓') : ''; ?></a></th>
                         <th><a href="?<?php echo $customer_id ? 'customer='.$customer_id.'&' : ''; ?>column=last_name&sort=<?php echo $sort_type == 'ASC' ? 'DESC' : 'ASC'; ?>" style="color: white; text-decoration: none;">Etternavn <?php echo $column == 'last_name' ? ($sort_type == 'ASC' ? '↑' : '↓') : ''; ?></a></th>
                         <th>Telefonnummer</th>
-                        <th>E-mail</th>
+                        <th>E-post</th>
                         <th>Handlinger</th>
                     </tr>
                 </thead>
@@ -168,21 +167,21 @@ $people = $Stmt->fetchAll(PDO::FETCH_ASSOC);
                 <input type="hidden" name="add_person" value="1">
                 <div class="form-group">
                     <input type="text" id="first_name" name="first_name" placeholder=" " required>
-                    <label for="first_name" class="floating">First Name</label>
+                    <label for="first_name" class="floating">Fornavn</label>
                 </div>
                 <div class="form-group">
                     <input type="text" id="last_name" name="last_name" placeholder=" " required>
-                    <label for="last_name" class="floating">Last Name</label>
+                    <label for="last_name" class="floating">Etternavn</label>
                 </div>
                 <div class="form-group">
                     <input type="text" id="phone_number" name="phone_number" placeholder=" " required>
-                    <label for="phone_number" class="floating">Phone Number</label>
+                    <label for="phone_number" class="floating">Telefonnummer</label>
                 </div>
                 <div class="form-group">
                     <input type="text" id="email" name="email" placeholder=" " required>
-                    <label for="email" class="floating">Email</label>
+                    <label for="email" class="floating">E-post</label>
                 </div>
-                <button type="submit" class="btn-submit">Add Person</button>
+                <button type="submit" class="btn-submit">Ny kontaktperson</button>
             </form>
         </div>
     </div>
@@ -190,28 +189,28 @@ $people = $Stmt->fetchAll(PDO::FETCH_ASSOC);
     <div id="updateModal" class="modal" onclick="if(event.target === this) this.classList.remove('show')">
         <div class="modal-content">
             <span class="close" onclick="document.getElementById('updateModal').classList.remove('show')">&times;</span>
-            <h2>Update Person</h2>
+            <h2>Oppdater kontaktperson</h2>
             <form method="POST">
                 <input type="hidden" name="update_person" value="1">
                 <input type="hidden" id="update_id" name="id">
                 <div class="form-group">
                     <input type="text" id="update_first_name" name="first_name" placeholder=" " required>
-                    <label for="update_first_name" class="floating">First Name</label>
+                    <label for="update_first_name" class="floating">Fornavn</label>
                 </div>
                 <div class="form-group">
                     <input type="text" id="update_last_name" name="last_name" placeholder=" " required>
-                    <label for="update_last_name" class="floating">Last Name</label>
+                    <label for="update_last_name" class="floating">Etternavn</label>
                 </div>
                 <div class="form-group">
                     <input type="text" id="update_phone_number" name="phone_number" placeholder=" " required>
-                    <label for="update_phone_number" class="floating">Phone Number</label>
+                    <label for="update_phone_number" class="floating">Telefonnummer</label>
                 </div>
                 <div class="form-group">
                     <input type="text" id="update_email" name="email" placeholder=" " required>
-                    <label for="update_email" class="floating">Email</label>
+                    <label for="update_email" class="floating">E-post</label>
                 </div>
-                <button type="submit" class="btn-submit">Update Person</button>
-                <button type="button" id="updateDeleteBtn" class="btn-delete" style="display: none;">Delete</button>
+                <button type="submit" class="btn-submit">Oppdater kontaktperson</button>
+                <button type="button" id="updateDeleteBtn" class="btn-delete" style="display: none;">Slett</button>
             </form>
         </div>
     </div>
@@ -238,7 +237,7 @@ $people = $Stmt->fetchAll(PDO::FETCH_ASSOC);
         
         document.getElementById('updateDeleteBtn').onclick = function() {
             var id = document.getElementById('update_id').value;
-            if (confirm('Are you sure you want to delete this person?')) {
+            if (confirm('Er du sikker på at du vil slette denne personen?')) {
                 window.location.href = getDeleteUrl(id);
             }
         };

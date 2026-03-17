@@ -47,7 +47,7 @@ $TokenData   = json_decode($TokenResponse, true);
 $AccessToken = $TokenData["access_token"] ?? null;
 
 if (!$AccessToken) {
-	die("Failed to get access token from GitHub. Response: " . $TokenResponse);
+	die("Fikk ikke tilgang token fra GitHub. Respons: " . $TokenResponse);
 }
 
 // 3. Fetch the user's GitHub profile
@@ -65,7 +65,7 @@ $GithubUser = json_decode($UserJson, true);
 $GithubLogin = $GithubUser["login"] ?? null; // GitHub username
 
 if (!$GithubLogin) {
-	die("Failed to fetch GitHub user info. Response: " . $UserJson);
+	die("Fikk ikke hentet GitHub bruker info. Respons: " . $UserJson);
 }
 
 // Debug: show what GitHub username we're looking for
@@ -81,7 +81,7 @@ $User = $Stmt->fetch(PDO::FETCH_ASSOC);
 
 // 5. If no account is linked to this GitHub user, reject
 if (!$User) {
-	die("Access denied: your GitHub account ($GithubLogin) is not linked to any account. Please add your GitHub username to your account in the database.");
+	die("Tilgang nektet: din GitHub konto ($GithubLogin) er ikke knyttet til noen konto. Vennligst legg til GitHub brukernavnet ditt til kontoen din i databasen.");
 }
 
 // 6. Log the user in via session

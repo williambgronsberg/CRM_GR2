@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			header("Location: login.php");
 			exit;
 		} catch (PDOException $e) {
-			$error = "Username already exists or error occurred.";
+			$error = "Brukernavn finnes allerede, eller så oppstod det et problem.";
 		}
 	}
 }

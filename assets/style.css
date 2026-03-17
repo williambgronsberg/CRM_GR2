@@ -67,7 +67,6 @@ nav {
 
 .nav-links a:hover {
 	opacity: 0.7;
-
 }
 
 .nav-avatar {
@@ -255,16 +254,17 @@ footer{
 }
 
 .btn-back:hover, .btn-register:hover, .btn-save:hover, .btn-action:hover, .btn-add:hover, .btn-submit:hover, .btn-delete:hover {
-	opacity: 0.9;
 	transform: translate(2px, 2px);
 	box-shadow: 2px 2px #323232;
+	color: rgb(var(--grey));
+	background-color: white;
 }
 
-
 .btn-back:hover {
-	opacity: 0.9;
 	transform: translate(2px, 2px);
 	box-shadow: 2px 2px #323232;
+	color: rgb(var(--grey));
+	background-color: white;
 }
 
 .customers-table-container h2 {
@@ -308,11 +308,6 @@ table.customers-table {
 	border-collapse: collapse;
 }
 
-table.customers-table {
-	width: 100%;
-	border-collapse: collapse;
-}
-
 .customers-table thead th {
 	padding: 18px 20px;
 	text-align: left;
@@ -323,7 +318,7 @@ table.customers-table {
 	background: rgb(var(--green));
 }
 
-.customers-table-container {
+.customers-table-container, #about_us_article {
 	width: 1000px;
 	margin: 40px auto;
 	background: white;
