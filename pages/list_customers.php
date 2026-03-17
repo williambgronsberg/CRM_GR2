@@ -115,6 +115,7 @@ $Customers = $Statement->fetchAll(PDO::FETCH_ASSOC);
 			document.getElementById('updateModal').classList.add('show');
 		}
 	</script>
+	
 </body>
 
 </html>
