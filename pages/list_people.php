@@ -133,8 +133,9 @@ $people = $Stmt->fetchAll(PDO::FETCH_ASSOC);
             <table class="customers-table">
                 <thead>
                     <tr>
-                        <th><a href="?<?php echo $customer_id ? 'customer='.$customer_id.'&' : ''; ?>column=first_name&sort=<?php echo $sort_type == 'ASC' ? 'DESC' : 'ASC'; ?>" style="color: white; text-decoration: none;">Fornavn <?php echo $column == 'first_name' ? ($sort_type == 'ASC' ? '↑' : '↓') : ''; ?></a></th>
-                        <th><a href="?<?php echo $customer_id ? 'customer='.$customer_id.'&' : ''; ?>column=last_name&sort=<?php echo $sort_type == 'ASC' ? 'DESC' : 'ASC'; ?>" style="color: white; text-decoration: none;">Etternavn <?php echo $column == 'last_name' ? ($sort_type == 'ASC' ? '↑' : '↓') : ''; ?></a></th>
+                        <?php $sort_icon = '↑↓'; ?>
+                        <th><a href="?<?php echo $customer_id ? 'customer='.$customer_id.'&' : ''; ?>column=first_name&sort=<?php echo $sort_type == 'ASC' ? 'DESC' : 'ASC'; ?>" style="color: white; text-decoration: none;">Fornavn (<?php if ($column == 'first_name') {if ($sort_type == 'ASC') {$sort_icon = '↑';} elseif ($sort_type == 'DESC') {$sort_icon = '↓';}} else {$sort_icon = '↑↓';} echo $sort_icon ?>)</a></th>
+                        <th><a href="?<?php echo $customer_id ? 'customer='.$customer_id.'&' : ''; ?>column=last_name&sort=<?php echo $sort_type == 'ASC' ? 'DESC' : 'ASC'; ?>" style="color: white; text-decoration: none;">Etternavn (<?php if ($column == 'last_name') {if ($sort_type == 'ASC') {$sort_icon = '↑';} elseif ($sort_type == 'DESC') {$sort_icon = '↓';}} else {$sort_icon = '↑↓';} echo $sort_icon ?>)</a></th>
                         <th>Telefonnummer</th>
                         <th>E-post</th>
                         <th>Handlinger</th>

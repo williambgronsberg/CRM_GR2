@@ -527,3 +527,8 @@ table.customers-table {
 .value_card h3{
     margin-top: 0;
 }
+
+.no_decor {
+	color: white;
+	text-decoration: none;
+}
