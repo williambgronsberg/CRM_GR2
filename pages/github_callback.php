@@ -20,7 +20,7 @@ include "../database/connect.php";
 // --- CONFIGURATION ---
 $GithubClientId     = "Ov23li286sxnmaZBNKV8";
 $GithubClientSecret = "fff7771b3948a4d391f561c90c78c1f138f2b130";
-$RedirectUri        = "http://localhost/CRM_GR2/pages/github_callback.php";
+$RedirectUri        = "http://localhost/Repos/CRM_GR2/pages/github_callback.php";
 
 // 1. Verify state to prevent CSRF attacks
 if (!isset($_GET["state"]) || $_GET["state"] !== $_SESSION["github_oauth_state"]) {
