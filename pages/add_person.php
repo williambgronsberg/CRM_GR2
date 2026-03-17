@@ -54,9 +54,9 @@ if (isset($_POST["new_person"]) && $_SERVER["REQUEST_METHOD"] == "POST") {
 			$Statement = $Pdo->prepare($Sql);
 			$Statement->execute([
 				":person_id" => $person_id,
-				":first_name" => $firstName,
-				":last_name" => $lastName,
-				":phone_number" => $phoneNumber,
+				":first_name" => $first_name,
+				":last_name" => $last_name,
+				":phone_number" => $phone_number,
 				":email" => $email
 		]);
 			

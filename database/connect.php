@@ -12,13 +12,13 @@
 //Parameters for connection:
 
 $Host = "localhost";
-$Username = "root";
-$Password = "";
+$username = "root";
+$password = "";
 $Database = "crm_g2";
 
 //Set connection with try and catch.
 try {
-	$Pdo = new PDO("mysql:host=$Host;dbname=$Database", $Username, $Password);
+	$Pdo = new PDO("mysql:host=$Host;dbname=$Database", $username, $password);
 	$Pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	
 } catch (PDOException $Error) {

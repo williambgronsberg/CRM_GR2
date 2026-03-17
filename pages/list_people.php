@@ -14,7 +14,7 @@ if ($customer_id) {
     $Sql = "SELECT customer_id, name FROM customer WHERE customer_id = :id";
     $Statement = $Pdo->prepare($Sql);
     $Statement->execute([":id" => $customer_id]);
-    $CurrentCustomer = $Statement->fetch(PDO::FETCH_ASSOC);
+    $current_customer = $Statement->fetch(PDO::FETCH_ASSOC);
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["add_person"])) {
@@ -116,22 +116,22 @@ $people = $Stmt->fetchAll(PDO::FETCH_ASSOC);
     <?php include 'pieces/nav.php' ?>
     
     <div style="margin: 15px;">
-        <div class="table-header">
-            <?php if ($customer_id && $CurrentCustomer): ?>
-                <h1><?php echo htmlspecialchars($CurrentCustomer['name']); ?> - Contact Persons</h1>
+        <div class="table_header">
+            <?php if ($customer_id && $current_customer): ?>
+                <h1><?php echo htmlspecialchars($current_customer['name']); ?> - Contact Persons</h1>
             <?php else: ?>
                 <h1>All Contact Persons</h1>
             <?php endif; ?>
-            <div class="table-actions">
-                <?php if ($customer_id && $CurrentCustomer): ?>
-                    <a href="list_customers.php" class="btn-back">&larr; Back</a>
+            <div class="table_actions">
+                <?php if ($customer_id && $current_customer): ?>
+                    <a href="list_customers.php" class="btn_back">&larr; Back</a>
                 <?php endif; ?>
-                <button class="btn-add" onclick="document.getElementById('addModal').classList.add('show')">+ Add Person</button>
+                <button class="btn_add" onclick="document.getElementById('add_modal').classList.add('show')">+ Add Person</button>
             </div>
         </div>
 
-        <div class="customers-table-container">
-            <table class="customers-table">
+        <div class="customers_table_container">
+            <table class="customers_table">
                 <thead>
                     <tr>
                         <th><a href="?<?php echo $customer_id ? 'customer='.$customer_id.'&' : ''; ?>column=first_name&sort=<?php echo $sort_type == 'ASC' ? 'DESC' : 'ASC'; ?>" style="color: white; text-decoration: none;">Fornavn <?php echo $column == 'first_name' ? ($sort_type == 'ASC' ? '↑' : '↓') : ''; ?></a></th>
@@ -149,8 +149,8 @@ $people = $Stmt->fetchAll(PDO::FETCH_ASSOC);
                             <td><?php echo htmlspecialchars($person['phone_number']); ?></td>
                             <td><?php echo htmlspecialchars($person['email']); ?></td>
                             <td>
-                                <div class="action-btns">
-                                    <button class="btn-action btn-edit" onclick="openUpdateModal(<?php echo $person['person_id']; ?>, '<?php echo htmlspecialchars($person['first_name']); ?>', '<?php echo htmlspecialchars($person['last_name']); ?>', '<?php echo htmlspecialchars($person['phone_number']); ?>', '<?php echo htmlspecialchars($person['email']); ?>')">Rediger</button>
+                                <div class="action_btns">
+                                    <button class="btn_action btn_edit" onclick="openUpdateModal(<?php echo $person['person_id']; ?>, '<?php echo htmlspecialchars($person['first_name']); ?>', '<?php echo htmlspecialchars($person['last_name']); ?>', '<?php echo htmlspecialchars($person['phone_number']); ?>', '<?php echo htmlspecialchars($person['email']); ?>')">Rediger</button>
                                 </div>
                             </td>
                         </tr>
@@ -160,64 +160,64 @@ $people = $Stmt->fetchAll(PDO::FETCH_ASSOC);
         </div>
     </div>
 
-    <div id="addModal" class="modal" onclick="if(event.target === this) this.classList.remove('show')">
-        <div class="modal-content">
-            <span class="close" onclick="document.getElementById('addModal').classList.remove('show')">&times;</span>
+    <div id="add_modal" class="modal" onclick="if(event.target === this) this.classList.remove('show')">
+        <div class="modal_content">
+            <span class="close" onclick="document.getElementById('add_modal').classList.remove('show')">&times;</span>
             <h2>Add Person</h2>
             <form method="POST">
                 <input type="hidden" name="add_person" value="1">
-                <div class="form-group">
+                <div class="form_group">
                     <input type="text" id="first_name" name="first_name" placeholder=" " required>
                     <label for="first_name" class="floating">First Name</label>
                 </div>
-                <div class="form-group">
+                <div class="form_group">
                     <input type="text" id="last_name" name="last_name" placeholder=" " required>
                     <label for="last_name" class="floating">Last Name</label>
                 </div>
-                <div class="form-group">
+                <div class="form_group">
                     <input type="text" id="phone_number" name="phone_number" placeholder=" " required>
                     <label for="phone_number" class="floating">Phone Number</label>
                 </div>
-                <div class="form-group">
+                <div class="form_group">
                     <input type="text" id="email" name="email" placeholder=" " required>
                     <label for="email" class="floating">Email</label>
                 </div>
-                <button type="submit" class="btn-submit">Add Person</button>
+                <button type="submit" class="btn_submit">Add Person</button>
             </form>
         </div>
     </div>
 
-    <div id="updateModal" class="modal" onclick="if(event.target === this) this.classList.remove('show')">
-        <div class="modal-content">
-            <span class="close" onclick="document.getElementById('updateModal').classList.remove('show')">&times;</span>
+    <div id="update_modal" class="modal" onclick="if(event.target === this) this.classList.remove('show')">
+        <div class="modal_content">
+            <span class="close" onclick="document.getElementById('update_modal').classList.remove('show')">&times;</span>
             <h2>Update Person</h2>
             <form method="POST">
                 <input type="hidden" name="update_person" value="1">
                 <input type="hidden" id="update_id" name="id">
-                <div class="form-group">
+                <div class="form_group">
                     <input type="text" id="update_first_name" name="first_name" placeholder=" " required>
                     <label for="update_first_name" class="floating">First Name</label>
                 </div>
-                <div class="form-group">
+                <div class="form_group">
                     <input type="text" id="update_last_name" name="last_name" placeholder=" " required>
                     <label for="update_last_name" class="floating">Last Name</label>
                 </div>
-                <div class="form-group">
+                <div class="form_group">
                     <input type="text" id="update_phone_number" name="phone_number" placeholder=" " required>
                     <label for="update_phone_number" class="floating">Phone Number</label>
                 </div>
-                <div class="form-group">
+                <div class="form_group">
                     <input type="text" id="update_email" name="email" placeholder=" " required>
                     <label for="update_email" class="floating">Email</label>
                 </div>
-                <button type="submit" class="btn-submit">Update Person</button>
-                <button type="button" id="updateDeleteBtn" class="btn-delete" style="display: none;">Delete</button>
+                <button type="submit" class="btn_submit">Update Person</button>
+                <button type="button" id="update_delete_btn" class="btn_delete" style="display: none;">Delete</button>
             </form>
         </div>
     </div>
 
     <script>
-        var customerId = <?php echo $customer_id ? $customer_id : 'null'; ?>;
+        var customer_id = <?php echo $customer_id ? $customer_id : 'null'; ?>;
         
         function openUpdateModal(id, first_name, last_name, phone_number, email) {
             document.getElementById('update_id').value = id;
@@ -225,18 +225,18 @@ $people = $Stmt->fetchAll(PDO::FETCH_ASSOC);
             document.getElementById('update_last_name').value = last_name;
             document.getElementById('update_phone_number').value = phone_number;
             document.getElementById('update_email').value = email;
-            document.getElementById('updateDeleteBtn').style.display = 'inline-block';
-            document.getElementById('updateModal').classList.add('show');
+            document.getElementById('update_delete_btn').style.display = 'inline-block';
+            document.getElementById('update_modal').classList.add('show');
         }
         
         function getDeleteUrl(id) {
-            if (customerId) {
-                return 'delete_person.php?id=' + id + '&customer=' + customerId;
+            if (customer_id) {
+                return 'delete_person.php?id=' + id + '&customer=' + customer_id;
             }
             return 'delete_person.php?id=' + id;
         }
         
-        document.getElementById('updateDeleteBtn').onclick = function() {
+        document.getElementById('update_delete_btn').onclick = function() {
             var id = document.getElementById('update_id').value;
             if (confirm('Are you sure you want to delete this person?')) {
                 window.location.href = getDeleteUrl(id);

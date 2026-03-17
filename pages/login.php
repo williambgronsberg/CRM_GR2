@@ -12,35 +12,35 @@ if (isset($_SESSION["username"])) {
 	exit;
 }
 
-$GithubClientId = "Ov23li286sxnmaZBNKV8";
-$RedirectUri    = "http://localhost/Repos/CRM_GR2/pages/github_callback.php";
+$github_client_id = "Ov23li286sxnmaZBNKV8";
+$redirect_uri    = "http://localhost/Repos/CRM_GR2/pages/github_callback.php";
 
 // GitHub OAuth redirect
 if (isset($_GET["github"])) {
-	$State = bin2hex(random_bytes(16));
-	$_SESSION["github_oauth_state"] = $State;
+	$state = bin2hex(random_bytes(16));
+	$_SESSION["github_oauth_state"] = $state;
 	header("Location: https://github.com/login/oauth/authorize?" . http_build_query([
-		"client_id"    => $GithubClientId,
-		"redirect_uri" => $RedirectUri,
+		"client_id"    => $github_client_id,
+		"redirect_uri" => $redirect_uri,
 		"scope"        => "read:user user:email",
-		"state"        => $State,
+		"state"        => $state,
 	]));
 	exit;
 }
 
 // Normal login
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-	$Username  = $_POST["username"];
-	$Password  = $_POST["password"];
+	$username  = $_POST["username"];
+	$password  = $_POST["password"];
 
 	$Sql = "SELECT * FROM accounts WHERE username = :username";
 	$Statement = $Pdo->prepare($Sql);
-	$Statement->bindParam(":username", $Username);
+	$Statement->bindParam(":username", $username);
 	$Statement->execute();
-	$User = $Statement->fetch(PDO::FETCH_ASSOC);
+	$user = $Statement->fetch(PDO::FETCH_ASSOC);
 
-	if ($User && password_verify($Password, $User["password"])) {
-		$_SESSION["username"] = $User["username"];
+	if ($user && password_verify($password, $user["password"])) {
+		$_SESSION["username"] = $user["username"];
 		header("Location: list_customers.php");
 		exit;
 	} else {

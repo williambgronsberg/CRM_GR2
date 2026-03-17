@@ -11,17 +11,17 @@ $error = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$username = $_POST["username"];
 	$password = $_POST["password"];
-	$confirmPassword = $_POST["confirm_password"];
-	$firstName = $_POST["first_name"];
-	$lastName = $_POST["last_name"];
-	$phoneNumber = $_POST["phone_number"];
+	$confirm_password = $_POST["confirm_password"];
+	$first_name = $_POST["first_name"];
+	$last_name = $_POST["last_name"];
+	$phone_number = $_POST["phone_number"];
 	$email = $_POST["email"];
-	$githubUsername = $_POST["github_username"];
+	$github_username = $_POST["github_username"];
 	
-	if ($password != $confirmPassword) {
+	if ($password != $confirm_password) {
 		$error = "Passwords do not match.";
 	} else {
-		$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+		$hashed_password = password_hash($password, PASSWORD_DEFAULT);
 		
 		$Sql = "INSERT INTO accounts (username, password, first_name, last_name, phone_number, email, github_username) 
 				VALUES (:username, :password, :first_name, :last_name, :phone_number, :email, :github_username)";
@@ -30,12 +30,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			$Statement = $Pdo->prepare($Sql);
 			$Statement->execute([
 				":username" => $username,
-				":password" => $hashedPassword,
-				":first_name" => $firstName,
-				":last_name" => $lastName,
-				":phone_number" => $phoneNumber,
+				":password" => $hashed_password,
+				":first_name" => $first_name,
+				":last_name" => $last_name,
+				":phone_number" => $phone_number,
 				":email" => $email,
-				":github_username" => $githubUsername
+				":github_username" => $github_username
 			]);
 			
 			header("Location: login.php");
@@ -69,7 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			align-items: center;
 			padding: 40px;
 		}
-		.register-container {
+		.register_container {
 			max-width: 500px;
 			width: 100%;
 			background: rgb(var(--green));
@@ -78,22 +78,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			border: 4px solid #323232;
 			box-shadow: 8px 8px #323232;
 		}
-		.register-container h1 {
+		.register_container h1 {
 			color: white;
 			font-size: 32px;
 			margin-bottom: 30px;
 			text-align: center;
 		}
-		.form-group {
+		.form_group {
 			margin-bottom: 20px;
 		}
-		.form-group label {
+		.form_group label {
 			display: block;
 			color: white;
 			font-size: 18px;
 			margin-bottom: 8px;
 		}
-		.form-group input {
+		.form_group input {
 			width: 100%;
 			padding: 15px;
 			font-size: 16px;
@@ -101,7 +101,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			border: 3px solid #323232;
 			background: white;
 		}
-		.btn-register {
+		.btn_register {
 			width: 100%;
 			padding: 15px;
 			font-size: 18px;
@@ -113,7 +113,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			cursor: pointer;
 			margin-top: 20px;
 		}
-		.btn-register:hover {
+		.btn_register:hover {
 			opacity: 0.8;
 		}
 		.error {
@@ -123,7 +123,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			border-radius: 8px;
 			margin-bottom: 20px;
 		}
-		.login-link {
+		.login_link {
 			display: block;
 			text-align: center;
 			color: white;
@@ -133,7 +133,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	</style>
 </head>
 <body>
-	<div class="register-container">
+	<div class="register_container">
 		<h1>Register</h1>
 		
 		<?php if ($error): ?>
@@ -141,50 +141,50 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		<?php endif; ?>
 		
 		<form action="register.php" method="post">
-			<div class="form-group">
+			<div class="form_group">
 				<label for="username">Username</label>
 				<input type="text" id="username" name="username" required>
 			</div>
 			
-			<div class="form-group">
+			<div class="form_group">
 				<label for="first_name">First Name</label>
 				<input type="text" id="first_name" name="first_name">
 			</div>
 			
-			<div class="form-group">
+			<div class="form_group">
 				<label for="last_name">Last Name</label>
 				<input type="text" id="last_name" name="last_name">
 			</div>
 			
-			<div class="form-group">
+			<div class="form_group">
 				<label for="phone_number">Phone Number</label>
 				<input type="text" id="phone_number" name="phone_number">
 			</div>
 			
-			<div class="form-group">
+			<div class="form_group">
 				<label for="email">Email</label>
 				<input type="email" id="email" name="email">
 			</div>
 			
-			<div class="form-group">
+			<div class="form_group">
 				<label for="github_username">GitHub Username</label>
 				<input type="text" id="github_username" name="github_username">
 			</div>
 			
-			<div class="form-group">
+			<div class="form_group">
 				<label for="password">Password</label>
 				<input type="password" id="password" name="password" required>
 			</div>
 			
-			<div class="form-group">
+			<div class="form_group">
 				<label for="confirm_password">Confirm Password</label>
 				<input type="password" id="confirm_password" name="confirm_password" required>
 			</div>
 			
-			<button type="submit" class="btn-register">Register</button>
+			<button type="submit" class="btn_register">Register</button>
 		</form>
 		
-		<a href="login.php" class="login-link">Already have an account? Login</a>
+		<a href="login.php" class="login_link">Already have an account? Login</a>
 	</div>
 </body>
 </html>

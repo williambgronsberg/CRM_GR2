@@ -16,24 +16,24 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-	$firstName = $_POST["first_name"];
-	$lastName = $_POST["last_name"];
-	$phoneNumber = $_POST["phone_number"];
+	$first_name = $_POST["first_name"];
+	$last_name = $_POST["last_name"];
+	$phone_number = $_POST["phone_number"];
 	$email = $_POST["email"];
 	
-    $updateSql = "UPDATE contact_person SET first_name = :first_name, last_name = :last_name, phone_number = :phone_number, email = :email;";
+    $update_sql = "UPDATE contact_person SET first_name = :first_name, last_name = :last_name, phone_number = :phone_number, email = :email;";
     $params = [
         ":person_id" => $person_id,
-        ":first_name" => $firstName,
-        ":last_name" => $lastName,
-        ":phone_number" => $phoneNumber,
+        ":first_name" => $first_name,
+        ":last_name" => $last_name,
+        ":phone_number" => $phone_number,
         ":email" => $email,
     ];
     
-    $updateSql .= " WHERE person_id = :person_id";
+    $update_sql .= " WHERE person_id = :person_id";
     
-    $UpdateStatement = $Pdo->prepare($updateSql);
-    $UpdateStatement->execute($params);
+    $update_statement = $Pdo->prepare($update_sql);
+    $update_statement->execute($params);
     
     header("Location: list_customers.php");
     exit;
@@ -52,8 +52,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
 	<?php include "pieces/nav.php"; ?>
 	
-	<div class="update-container">
-		<a href="list_customers.php" class="btn-back">&larr; Back</a>
+	<div class="update_container">
+		<a href="list_customers.php" class="btn_back">&larr; Back</a>
 		<h1>Update Profile</h1>
 		
 		<?php if (isset($error)): ?>
@@ -61,31 +61,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		<?php endif; ?>
 		
 		<form action="update_person.php" method="post">
-			<div class="form-row">
-				<div class="form-group">
+			<div class="form_row">
+				<div class="form_group">
 					<label for="first_name">First Name</label>
 					<input type="text" id="first_name" name="first_name" value="<?php echo $user_person['first_name']; ?>">
 				</div>
 				
-				<div class="form-group">
+				<div class="form_group">
 					<label for="last_name">Last Name</label>
 					<input type="text" id="last_name" name="last_name" value="<?php echo $user_person['last_name']; ?>">
 				</div>
 			</div>
 			
-			<div class="form-row">
-				<div class="form-group" style="flex: 0 0 200px;">
+			<div class="form_row">
+				<div class="form_group" style="flex: 0 0 200px;">
 					<label for="phone_number">Phone Number</label>
 					<input type="text" id="phone_number" name="phone_number" value="<?php echo $user_person['phone_number']; ?>">
 				</div>
 				
-				<div class="form-group">
+				<div class="form_group">
 					<label for="email">Email</label>
 					<input type="email" id="email" name="email" value="<?php echo $user_person['email']; ?>">
 				</div>
 			</div>
 			
-			<button type="submit" name="update" class="btn-save">Save Changes</button>
+			<button type="submit" name="update" class="btn_save">Save Changes</button>
 		</form>
 	</div>
 </body>

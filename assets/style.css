@@ -42,7 +42,7 @@ nav {
 	margin-top: 23px;
 }
 
-.nav-logo {
+.nav_logo {
 	color: white;
 	font-size: 36px;
 	font-weight: 700;
@@ -50,13 +50,13 @@ nav {
 
 }
 
-.nav-links {
+.nav_links {
 	display: flex;
 	align-items: center;
 	gap: 60px;
 }
 
-.nav-links a {
+.nav_links a {
 	color: white;
 	text-decoration: none;
 	font-size: 42px;
@@ -65,12 +65,12 @@ nav {
 	transition: opacity 0.2s;
 }
 
-.nav-links a:hover {
+.nav_links a:hover {
 	opacity: 0.7;
 
 }
 
-.nav-avatar {
+.nav_avatar {
 	width: 83px;
 	height: 83px;
 	border-radius: 50%;
@@ -96,7 +96,7 @@ footer{
 	
 }
 
-.register-container {
+.register_container {
 	max-width: 500px;
 	width: 100%;
 	margin: 40px auto;
@@ -107,7 +107,7 @@ footer{
 	box-shadow: 8px 8px #323232;
 }
 
-.update-container {
+.update_container {
 	width: 1000px;
 	margin: 40px auto;
 	background: rgb(var(--green));
@@ -117,25 +117,25 @@ footer{
 	box-shadow: 8px 8px #323232;
 }
 
-.register-container h1 {
+.register_container h1 {
 	color: white;
 	font-size: 32px;
 	margin-bottom: 30px;
 	text-align: center;
 }
 
-.form-group {
+.form_group {
 	margin-bottom: 20px;
 }
 
-.form-group label {
+.form_group label {
 	display: block;
 	color: white;
 	font-size: 18px;
 	margin-bottom: 8px;
 }
 
-.form-group input {
+.form_group input {
 	width: 100%;
 	padding: 16px;
 	font-size: 16px;
@@ -146,17 +146,17 @@ footer{
 	transition: all 0.3s ease;
 }
 
-.form-group input:focus {
+.form_group input:focus {
 	border-color: rgb(var(--green));
 	box-shadow: 4px 4px rgb(var(--green));
 	outline: none;
 }
 
-.form-group input::placeholder {
+.form_group input::placeholder {
 	color: transparent;
 }
 
-.form-group label.floating {
+.form_group label.floating {
 	position: absolute;
 	left: 16px;
 	top: 50%;
@@ -168,24 +168,24 @@ footer{
 	padding: 0 5px;
 }
 
-.form-group input:focus+label.floating,
-.form-group input:not(:placeholder-shown)+label.floating {
+.form_group input:focus+label.floating,
+.form_group input:not(:placeholder-shown)+label.floating {
 	top: 0;
 	font-size: 12px;
 	color: #323232;
 	transform: translateY(-50%);
 }
 
-.form-row {
+.form_row {
 	display: flex;
 	gap: 20px;
 }
 
-.form-row .form-group {
+.form_row .form_group {
 	flex: 1;
 }
 
-.form-row .form-group input {
+.form_row .form_group input {
 	width: 100%;
 }
 
@@ -197,7 +197,7 @@ footer{
 	margin-bottom: 20px;
 }
 
-.update-container {
+.update_container {
 	max-width: 1000px;
 	margin: 0 20;
 	background: rgb(var(--green));
@@ -207,24 +207,24 @@ footer{
 	box-shadow: 8px 8px #323232;
 }
 
-.update-container h1 {
+.update_container h1 {
 	color: white;
 	font-size: 32px;
 	margin-bottom: 30px;
 }
 
-.form-group {
+.form_group {
 	margin-bottom: 20px;
 }
 
-.form-group label {
+.form_group label {
 	display: block;
 	color: white;
 	font-size: 18px;
 	margin-bottom: 8px;
 }
 
-.form-group input {
+.form_group input {
 	width: 100%;
 	padding: 15px;
 	font-size: 16px;
@@ -240,7 +240,7 @@ footer{
 	border-radius: 8px;
 }
 
-.btn-back, .btn-register, .btn-save, .btn-action, .btn-add, .btn-submit, .btn-delete {
+.btn_back, .btn_register, .btn_save, .btn_action, .btn_add, .btn_submit, .btn_delete {
 	display: inline-block;
 	color: white;
 	text-decoration: none;
@@ -254,66 +254,66 @@ footer{
 	cursor: pointer;
 }
 
-.btn-back:hover, .btn-register:hover, .btn-save:hover, .btn-action:hover, .btn-add:hover, .btn-submit:hover, .btn-delete:hover {
+.btn_back:hover, .btn_register:hover, .btn_save:hover, .btn_action:hover, .btn_add:hover, .btn_submit:hover, .btn_delete:hover {
 	opacity: 0.9;
 	transform: translate(2px, 2px);
 	box-shadow: 2px 2px #323232;
 }
 
 
-.btn-back:hover {
+.btn_back:hover {
 	opacity: 0.9;
 	transform: translate(2px, 2px);
 	box-shadow: 2px 2px #323232;
 }
 
-.customers-table-container h2 {
+.customers_table_container h2 {
 	color: #323232;
 	font-size: 24px;
 	padding: 20px;
 	margin: 0;
 }
 
-.table-header {
+.table_header {
 	display: flex;
 	align-items: center;
 	width: 1000px;
 	margin: 0 auto 15px auto;
 }
 
-.table-header h1 {
+.table_header h1 {
 	color: white;
 	margin: 0;
 	flex: 1;
 }
 
-.table-header > div:first-child {
+.table_header > div:first-child {
 	flex: 1;
 }
 
-.table-header .table-actions {
+.table_header .table_actions {
 	display: flex;
 	align-items: center;
 	gap: 10px;
 }
 
-.btn-action {
+.btn_action {
 	padding: 10px 20px;
 	font-size: 16px;
 	white-space: nowrap;
 }
 
-table.customers-table {
+table.customers_table {
 	width: 100%;
 	border-collapse: collapse;
 }
 
-table.customers-table {
+table.customers_table {
 	width: 100%;
 	border-collapse: collapse;
 }
 
-.customers-table thead th {
+.customers_table thead th {
 	padding: 18px 20px;
 	text-align: left;
 	font-size: 20px;
@@ -323,7 +323,7 @@ table.customers-table {
 	background: rgb(var(--green));
 }
 
-.customers-table-container {
+.customers_table_container {
 	width: 1000px;
 	margin: 40px auto;
 	background: white;
@@ -333,26 +333,26 @@ table.customers-table {
 	overflow: hidden;
 }
 
-.table-header {
+.table_header {
 	display: flex;
 	align-items: center;
 	width: 1000px;
 	margin: 0 auto 15px auto;
 }
 
-.table-header h1 {
+.table_header h1 {
 	color: white;
 	margin: 0;
 }
 
-.table-header .table-actions {
+.table_header .table_actions {
 	display: flex;
 	align-items: center;
 	gap: 10px;
 	margin-left: auto;
 }
 
-.customers-table tbody td, #about_us_article p {
+.customers_table tbody td, #about_us_article p {
 	padding: 16px 20px;
 	font-size: 15px;
 	font-family: "archivo-variable", sans-serif;
@@ -361,22 +361,22 @@ table.customers-table {
 	border: none;
 }
 
-.action-btns {
+.action_btns {
 	display: flex;
 	gap: 8px;
 }
 
-.btn-action.btn-view {
+.btn_action.btn_view {
 	background: #6d5555;
 	color: #323232;
 }
 
-.btn-action.btn-edit {
+.btn_action.btn_edit {
 	background: rgb(var(--brown));
 	color: white;
 }
 
-.btn-action.btn-delete {
+.btn_action.btn_delete {
 	background: #e74c3c;
 	color: white;
 }
@@ -398,7 +398,7 @@ table.customers-table {
 	display: flex;
 }
 
-.modal-content {
+.modal_content {
 	background: white;
 	padding: 30px;
 	border-radius: 16px;
@@ -408,30 +408,30 @@ table.customers-table {
 	box-shadow: 6px 6px #323232;
 }
 
-.modal-content h2 {
+.modal_content h2 {
 	color: #323232;
 	margin-bottom: 20px;
 }
 
-.modal-content .close {
+.modal_content .close {
 	float: right;
 	font-size: 24px;
 	cursor: pointer;
 	color: #323232;
 }
 
-.modal-content .form-group {
+.modal_content .form_group {
 	margin-bottom: 15px;
 	position: relative;
 }
 
-.modal-content label {
+.modal_content label {
 	display: block;
 	color: #323232;
 	margin-bottom: 5px;
 }
 
-.modal-content input {
+.modal_content input {
 	width: 100%;
 	padding: 16px;
 	border: 2px solid #323232;
@@ -440,16 +440,16 @@ table.customers-table {
 	box-shadow: 3px 3px #323232;
 }
 
-.modal-content input:focus {
+.modal_content input:focus {
 	border-color: #888;
 	outline: none;
 }
 
-.modal-content input::placeholder {
+.modal_content input::placeholder {
 	color: transparent;
 }
 
-.modal-content label.floating {
+.modal_content label.floating {
 	position: absolute;
 	left: 16px;
 	top: 50%;
@@ -461,8 +461,8 @@ table.customers-table {
 	padding: 0 5px;
 }
 
-.modal-content input:focus+label.floating,
-.modal-content input:not(:placeholder-shown)+label.floating {
+.modal_content input:focus+label.floating,
+.modal_content input:not(:placeholder-shown)+label.floating {
 	top: 0;
 	font-size: 11px;
 	color: #323232;

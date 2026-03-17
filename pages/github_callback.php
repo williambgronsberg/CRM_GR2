@@ -18,9 +18,9 @@ session_start();
 include "../database/connect.php";
 
 // --- CONFIGURATION ---
-$GithubClientId     = "Ov23li286sxnmaZBNKV8";
-$GithubClientSecret = "fff7771b3948a4d391f561c90c78c1f138f2b130";
-$RedirectUri        = "http://localhost/Repos/CRM_GR2/pages/github_callback.php";
+$github_client_id     = "Ov23li286sxnmaZBNKV8";
+$github_client_secret = "fff7771b3948a4d391f561c90c78c1f138f2b130";
+$redirect_uri        = "http://localhost/Repos/CRM_GR2/pages/github_callback.php";
 
 // 1. Verify state to prevent CSRF attacks
 if (!isset($_GET["state"]) || $_GET["state"] !== $_SESSION["github_oauth_state"]) {
@@ -29,13 +29,13 @@ if (!isset($_GET["state"]) || $_GET["state"] !== $_SESSION["github_oauth_state"]
 unset($_SESSION["github_oauth_state"]);
 
 // 2. Exchange the code for an access token
-$Code = $_GET["code"] ?? "";
+$code = $_GET["code"] ?? "";
 
-$TokenResponse = file_get_contents("https://github.com/login/oauth/access_token?" . http_build_query([
-	"client_id"     => $GithubClientId,
-	"client_secret" => $GithubClientSecret,
-	"code"          => $Code,
-	"redirect_uri"  => $RedirectUri,
+$token_response = file_get_contents("https://github.com/login/oauth/access_token?" . http_build_query([
+	"client_id"     => $github_client_id,
+	"client_secret" => $github_client_secret,
+	"code"          => $code,
+	"redirect_uri"  => $redirect_uri,
 ]), false, stream_context_create([
 	"http" => [
 		"method" => "POST",
@@ -43,49 +43,49 @@ $TokenResponse = file_get_contents("https://github.com/login/oauth/access_token?
 	]
 ]));
 
-$TokenData   = json_decode($TokenResponse, true);
-$AccessToken = $TokenData["access_token"] ?? null;
+$token_data   = json_decode($token_response, true);
+$access_token = $token_data["access_token"] ?? null;
 
-if (!$AccessToken) {
-	die("Failed to get access token from GitHub. Response: " . $TokenResponse);
+if (!$access_token) {
+	die("Failed to get access token from GitHub. Response: " . $token_response);
 }
 
 // 3. Fetch the user's GitHub profile
-$UserJson = file_get_contents("https://api.github.com/user", false, stream_context_create([
+$user_json = file_get_contents("https://api.github.com/user", false, stream_context_create([
 	"http" => [
 		"header" => implode("\r\n", [
-			"Authorization: Bearer $AccessToken",
+			"Authorization: Bearer $access_token",
 			"User-Agent: CRM_GR2",
 			"Accept: application/json",
 		])
 	]
 ]));
 
-$GithubUser = json_decode($UserJson, true);
-$GithubLogin = $GithubUser["login"] ?? null; // GitHub username
+$github_user = json_decode($user_json, true);
+$github_login = $github_user["login"] ?? null; // GitHub username
 
-if (!$GithubLogin) {
-	die("Failed to fetch GitHub user info. Response: " . $UserJson);
+if (!$github_login) {
+	die("Failed to fetch GitHub user info. Response: " . $user_json);
 }
 
 // Debug: show what GitHub username we're looking for
 // Remove this after testing
-// die("Looking for GitHub user: " . $GithubLogin);
+// die("Looking for GitHub user: " . $github_login);
 
 // 4. Look up account by github_username
 $Sql  = "SELECT * FROM accounts WHERE github_username = :github_username";
 $Stmt = $Pdo->prepare($Sql);
-$Stmt->bindParam(":github_username", $GithubLogin);
+$Stmt->bindParam(":github_username", $github_login);
 $Stmt->execute();
-$User = $Stmt->fetch(PDO::FETCH_ASSOC);
+$user = $Stmt->fetch(PDO::FETCH_ASSOC);
 
 // 5. If no account is linked to this GitHub user, reject
-if (!$User) {
-	die("Access denied: your GitHub account ($GithubLogin) is not linked to any account. Please add your GitHub username to your account in the database.");
+if (!$user) {
+	die("Access denied: your GitHub account ($github_login) is not linked to any account. Please add your GitHub username to your account in the database.");
 }
 
 // 6. Log the user in via session
-$_SESSION["username"] = $User["username"];
+$_SESSION["username"] = $user["username"];
 $_SESSION["logged_in"] = true;
 
 header("Location: list_customers.php");

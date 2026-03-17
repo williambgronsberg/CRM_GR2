@@ -64,13 +64,13 @@ $Customers = $Statement->fetchAll(PDO::FETCH_ASSOC);
 	<?php include "pieces/nav.php"; ?>
 
 	<div style="margin: 15px;">
-		<div class="table-header">
+		<div class="table_header">
 			<div></div>
-			<button class="btn-add" onclick="document.getElementById('addModal').classList.add('show')">+ Add Customer</button>
+			<button class="btn_add" onclick="document.getElementById('add_modal').classList.add('show')">+ Add Customer</button>
 		</div>
 
-		<div class="customers-table-container" style="margin-top: 15px; clear: both;">
-			<table class="customers-table">
+		<div class="customers_table_container" style="margin-top: 15px; clear: both;">
+			<table class="customers_table">
 				<thead>
 					<tr>
 						<th>Name</th>
@@ -88,9 +88,9 @@ $Customers = $Statement->fetchAll(PDO::FETCH_ASSOC);
 							<td><?php echo htmlspecialchars($Customer['phone_number']); ?></td>
 							<td><?php echo htmlspecialchars($Customer['kunde_siden']); ?></td>
 							<td>
-								<div class="action-btns">
-									<a href="list_people.php?customer=<?php echo $Customer['customer_id']; ?>" class="btn-action btn-edit">Se mer</a>
-									<button class="btn-action btn-edit" onclick="openUpdateModal(<?php echo $Customer['customer_id']; ?>, '<?php echo htmlspecialchars($Customer['name']); ?>', '<?php echo htmlspecialchars($Customer['address']); ?>', '<?php echo htmlspecialchars($Customer['phone_number']); ?>')">Rediger</button>
+								<div class="action_btns">
+									<a href="list_people.php?customer=<?php echo $Customer['customer_id']; ?>" class="btn_action btn_edit">Se mer</a>
+									<button class="btn_action btn_edit" onclick="openUpdateModal(<?php echo $Customer['customer_id']; ?>, '<?php echo htmlspecialchars($Customer['name']); ?>', '<?php echo htmlspecialchars($Customer['address']); ?>', '<?php echo htmlspecialchars($Customer['phone_number']); ?>')">Rediger</button>
 
 								</div>
 							</td>
@@ -111,8 +111,8 @@ $Customers = $Statement->fetchAll(PDO::FETCH_ASSOC);
 			document.getElementById('update_name').value = name;
 			document.getElementById('update_address').value = address;
 			document.getElementById('update_phone_number').value = phone_number;
-			document.getElementById('updateDeleteBtn').style.display = 'inline-block';
-			document.getElementById('updateModal').classList.add('show');
+			document.getElementById('update_delete_btn').style.display = 'inline-block';
+			document.getElementById('update_modal').classList.add('show');
 		}
 	</script>
 	

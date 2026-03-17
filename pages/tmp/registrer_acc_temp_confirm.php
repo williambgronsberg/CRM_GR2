@@ -11,19 +11,19 @@
 include('../../database/connect.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-	$Username = $_POST["username"];
-	$Password = $_POST["password"];
-	$hashedPassword = password_hash($Password, PASSWORD_DEFAULT);
-	// echo $hashedPassword;
+	$username = $_POST["username"];
+	$password = $_POST["password"];
+	$hashed_password = password_hash($password, PASSWORD_DEFAULT);
+	// echo $hashed_password;
 	// Insert into database
 	$Sql = "INSERT INTO accounts (username, first_name, last_name, phone_number, email, password) VALUES (:username, :first_name, :last_name, :phone_number, :email, :password)";
 	$Statement = $Pdo->prepare($Sql);
-	$Statement->bindParam(":username", $Username);
+	$Statement->bindParam(":username", $username);
 	$Statement->bindParam(":first_name", $_POST["first_name"]);
 	$Statement->bindParam(":last_name", $_POST["last_name"]);
 	$Statement->bindParam(":phone_number", $_POST["phone_number"]);
 	$Statement->bindParam(":email", $_POST["email"]);
-	$Statement->bindParam(":password", $hashedPassword);
+	$Statement->bindParam(":password", $hashed_password);
 	$Statement->execute();
 
 	echo "Account created successfully.";
