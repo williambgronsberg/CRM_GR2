@@ -66,7 +66,7 @@ $Customers = $Statement->fetchAll(PDO::FETCH_ASSOC);
 	<div style="margin: 15px;">
 		<div class="table-header">
 			<div></div>
-			<button class="btn-add" onclick="document.getElementById('addModal').classList.add('show')">+ Add Customer</button>
+			<button class="btn-add" onclick="document.getElementById('addModal').classList.add('show')">+ Ny Bedrift</button>
 		</div>
 
 		<div class="customers-table-container" style="margin-top: 15px; clear: both;">

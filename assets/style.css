@@ -46,8 +46,6 @@ nav {
 	color: white;
 	font-size: 36px;
 	font-weight: 700;
-
-
 }
 
 .nav-links {
@@ -84,7 +82,7 @@ nav {
 	/* user-select: pointer; */
 }
 
-footer{
+footer {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -92,7 +90,16 @@ footer{
 	padding: 20px;
 	margin-top: 20px;
 	background-color: rgb(var(--brown));
-	
+}
+
+footer p {
+	color: white;
+	text-shadow: 2px 2px rgb(var(--grey)), -2px -2px rgb(var(--grey)), 2px -2px rgb(var(--grey)), -2px 2px rgb(var(--grey));
+}
+
+footer a {
+	color: rgb(var(--green));
+	text-shadow: 2px 2px rgb(var(--grey)), -2px -2px rgb(var(--grey)), 2px -2px rgb(var(--grey)), -2px 2px rgb(var(--grey));
 }
 
 .register-container {
