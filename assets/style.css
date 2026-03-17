@@ -84,6 +84,17 @@ nav {
 	/* user-select: pointer; */
 }
 
+footer{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	padding: 20px;
+	margin-top: 20px;
+	background-color: rgb(var(--brown));
+	
+}
+
 .register-container {
 	max-width: 500px;
 	width: 100%;
