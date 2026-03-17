@@ -108,4 +108,5 @@ require "auth_check.php";
     </main>
 
 </body>
+<?php include "pieces/footer.php"; ?>
 </html>
