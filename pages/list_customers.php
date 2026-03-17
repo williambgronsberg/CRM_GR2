@@ -73,11 +73,11 @@ $Customers = $Statement->fetchAll(PDO::FETCH_ASSOC);
 			<table class="customers-table">
 				<thead>
 					<tr>
-						<th>Name</th>
-						<th>Address</th>
-						<th>Phone Number</th>
-						<th>Customer Since</th>
-						<th>Actions</th>
+						<th>Navn</th>
+						<th>Addresse</th>
+						<th>Telefonnummer</th>
+						<th>Kunde siden</th>
+						<th>Handlinger</th>
 					</tr>
 				</thead>
 				<tbody>

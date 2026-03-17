@@ -54,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Login</title>
+	<title>Logg inn</title>
 	<link rel="stylesheet" href="https://use.typekit.net/idz1bdq.css">
 	<link rel="stylesheet" href="../assets/style.css">
 	<style>
@@ -204,8 +204,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
 	<form action="login.php" method="post" class="form">
 		<p>
-			Welcome
-			<span>sign in to continue</span>
+			Velkommen
+			<span>logg inn for å fortsette</span>
 		</p>
 
 
@@ -219,7 +219,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 		<div class="separator">
 			<div></div>
-			<span>OR</span>
+			<span>ELLER</span>
 			<div></div>
 		</div>
 
@@ -227,11 +227,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			<p class="error"><?php echo htmlspecialchars($error); ?></p>
 		<?php endif; ?>
 
-		<input type="text" placeholder="Username" name="username">
-		<input type="password" placeholder="Password" name="password">
+		<input type="text" placeholder="Brukernavn" name="username">
+		<input type="password" placeholder="Passord" name="password">
 
 		<button type="submit" class="oauthButton">
-			Login
+			Logg inn
 			<svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 				<path d="m6 17 5-5-5-5" />
 				<path d="m13 17 5-5-5-5" />

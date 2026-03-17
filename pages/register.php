@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$githubUsername = $_POST["github_username"];
 	
 	if ($password != $confirmPassword) {
-		$error = "Passwords do not match.";
+		$error = "Passord samsvarer ikke.";
 	} else {
 		$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 		
@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			header("Location: login.php");
 			exit;
 		} catch (PDOException $e) {
-			$error = "Username already exists or error occurred.";
+			$error = "Brukernavn finnes allerede, eller så oppstod det et problem.";
 		}
 	}
 }
@@ -52,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Register</title>
+	<title>Registrer</title>
 	<link rel="stylesheet" href="https://use.typekit.net/idz1bdq.css">
 	<link rel="stylesheet" href="../assets/style.css">
 	<style>
@@ -134,7 +134,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
 	<div class="register-container">
-		<h1>Register</h1>
+		<h1>Registrer</h1>
 		
 		<?php if ($error): ?>
 			<p class="error"><?php echo $error; ?></p>
@@ -142,22 +142,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		
 		<form action="register.php" method="post">
 			<div class="form-group">
-				<label for="username">Username</label>
+				<label for="username">Brukernavn</label>
 				<input type="text" id="username" name="username" required>
 			</div>
 			
 			<div class="form-group">
-				<label for="first_name">First Name</label>
+				<label for="first_name">Fornavn</label>
 				<input type="text" id="first_name" name="first_name">
 			</div>
 			
 			<div class="form-group">
-				<label for="last_name">Last Name</label>
+				<label for="last_name">Etternavn</label>
 				<input type="text" id="last_name" name="last_name">
 			</div>
 			
 			<div class="form-group">
-				<label for="phone_number">Phone Number</label>
+				<label for="phone_number">Telefonnummer</label>
 				<input type="text" id="phone_number" name="phone_number">
 			</div>
 			
@@ -167,24 +167,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			</div>
 			
 			<div class="form-group">
-				<label for="github_username">GitHub Username</label>
+				<label for="github_username">GitHub Brukernavn</label>
 				<input type="text" id="github_username" name="github_username">
 			</div>
 			
 			<div class="form-group">
-				<label for="password">Password</label>
+				<label for="password">Passord</label>
 				<input type="password" id="password" name="password" required>
 			</div>
 			
 			<div class="form-group">
-				<label for="confirm_password">Confirm Password</label>
+				<label for="confirm_password">Bekreft Passord</label>
 				<input type="password" id="confirm_password" name="confirm_password" required>
 			</div>
 			
-			<button type="submit" class="btn-register">Register</button>
+			<button type="submit" class="btn-register">Registrer</button>
 		</form>
 		
-		<a href="login.php" class="login-link">Already have an account? Login</a>
+		<a href="login.php" class="login-link">Har du allerede bruker? Logg inn</a>
 	</div>
 </body>
 </html>
