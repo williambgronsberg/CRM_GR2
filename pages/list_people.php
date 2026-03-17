@@ -73,7 +73,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["update_person"])) {
     exit;
 }
 
+$allowed_columns = ["person_id", "first_name", "last_name", "phone_number", "email"];
 $column = $_GET["column"] ?? "person_id";
+if (!in_array($column, $allowed_columns)) {
+    $column = "person_id";
+}
 
 $sort_type = "ASC";
 if (isset($_GET['sort'])) {
@@ -84,11 +88,9 @@ if (isset($_GET['sort'])) {
 $_SESSION["sort_type"] = $sort_type;
 
 if ($customer_id) {
-    $Sql = "SELECT contact_person.*
-            FROM contact_person
-            INNER JOIN customer_has_user
-                ON contact_person.person_id = customer_has_user.person_id
-            WHERE customer_has_user.customer_id = :customer_id
+    $Sql = "SELECT cp.* FROM contact_person cp 
+            INNER JOIN customer_has_user chu ON cp.person_id = chu.person_id 
+            WHERE chu.customer_id = :customer_id 
             ORDER BY $column $sort_type";
     $Stmt = $Pdo->prepare($Sql);
     $Stmt->execute([":customer_id" => $customer_id]);
@@ -209,7 +211,7 @@ $people = $Stmt->fetchAll(PDO::FETCH_ASSOC);
                     <label for="update_email" class="floating">Email</label>
                 </div>
                 <button type="submit" class="btn-submit">Update Person</button>
-                <button type="button" id="updateDeleteBtn" class="btn-delete" onclick="if(confirm('Are you sure you want to delete this person?')) { window.location.href='delete_person.php?id=' + document.getElementById('update_id').value; }" style="display: none;">Delete</button>
+                <button type="button" id="updateDeleteBtn" class="btn-delete" style="display: none;">Delete</button>
             </form>
         </div>
     </div>
