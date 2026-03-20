@@ -4,7 +4,7 @@
  * @Author: William Berge Groensberg
  * @Date:   2026-03-03 09:18:02
  * @Last Modified by:   William Berge Groensberg
- * @Last Modified time: 2026-03-10 10:51:17
+ * @Last Modified time: 2026-03-20 09:40:08
  */
 require "auth_check.php";
 
@@ -105,7 +105,7 @@ $customers = $Stmt->fetchAll(PDO::FETCH_ASSOC);
 							<td><?php echo htmlspecialchars($customer['kunde_siden']); ?></td>
 							<td>
 								<div class="action-btns">
-									<a href="list_customers.php?customer=<?php echo $customer['customer_id']; ?>" class="btn-action btn-edit">Se mer</a>
+									<a href="list_people.php?customer=<?php echo $customer['customer_id']; ?>" class="btn-action btn-edit">Se mer</a>
 									<button class="btn-action btn-edit" onclick="openUpdateModal(<?php echo $customer['customer_id']; ?>, '<?php echo htmlspecialchars($customer['name']); ?>', '<?php echo htmlspecialchars($customer['address']); ?>', '<?php echo htmlspecialchars($customer['phone_number']); ?>')">Rediger</button>
 
 								</div>
