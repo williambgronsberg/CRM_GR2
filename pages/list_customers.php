@@ -48,9 +48,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["update_customer"])) {
 	exit;
 }
 
-$Sql = "SELECT * FROM customer";
-$Statement = $Pdo->query($Sql);
-$Customers = $Statement->fetchAll(PDO::FETCH_ASSOC);
+$allowed_columns = ["customer_id", "name", "address", "phone_number", "kunde_siden"];
+$column = $_GET["column"] ?? "customer_id";
+if (!in_array($column, $allowed_columns)) {
+    $column = "customer_id";
+}
+
+$sort_type = "ASC";
+if (isset($_GET['sort'])) {
+    $sort_type = $_GET['sort'] == "DESC" ? "DESC" : "ASC";
+} elseif (isset($_SESSION["sort_type"])) {
+    $sort_type = $_SESSION["sort_type"];
+}
+$_SESSION["sort_type"] = $sort_type;
+
+$Sql = "SELECT * FROM customer ORDER BY $column $sort_type";
+$Stmt = $Pdo->prepare($Sql);
+$Stmt->execute();
+
+$customers = $Stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -73,24 +89,24 @@ $Customers = $Statement->fetchAll(PDO::FETCH_ASSOC);
 			<table class="customers-table">
 				<thead>
 					<tr>
-						<th>Navn</th>
-						<th>Addresse</th>
+						<th><a href="?column=name&sort=<?php echo $sort_type == 'ASC' ? 'DESC' : 'ASC'; ?>" style="color: white; text-decoration: none;">Navn (<?php if ($column == 'name') {if ($sort_type == 'ASC') {$sort_icon = '↑';} elseif ($sort_type == 'DESC') {$sort_icon = '↓';}} else {$sort_icon = '↑↓';} echo $sort_icon ?>)</a></th>
 						<th>Telefonnummer</th>
-						<th>Kunde siden</th>
+						<th><a href="?column=kunde_siden&sort=<?php echo $sort_type == 'ASC' ? 'DESC' : 'ASC'; ?>" style="color: white; text-decoration: none;">Kunde siden (<?php if ($column == 'kunde_siden') {if ($sort_type == 'ASC') {$sort_icon = '↑';} elseif ($sort_type == 'DESC') {$sort_icon = '↓';}} else {$sort_icon = '↑↓';} echo $sort_icon ?>)</a></th>
+						<th>Addresse</th>
 						<th>Handlinger</th>
 					</tr>
 				</thead>
 				<tbody>
-					<?php foreach ($Customers as $Customer): ?>
+					<?php foreach ($customers as $customer): ?>
 						<tr>
-							<td><?php echo htmlspecialchars($Customer['name']); ?></td>
-							<td><?php echo htmlspecialchars($Customer['address']); ?></td>
-							<td><?php echo htmlspecialchars($Customer['phone_number']); ?></td>
-							<td><?php echo htmlspecialchars($Customer['kunde_siden']); ?></td>
+							<td><?php echo htmlspecialchars($customer['name']); ?></td>
+							<td><?php echo htmlspecialchars($customer['address']); ?></td>
+							<td><?php echo htmlspecialchars($customer['phone_number']); ?></td>
+							<td><?php echo htmlspecialchars($customer['kunde_siden']); ?></td>
 							<td>
 								<div class="action-btns">
-									<a href="list_people.php?customer=<?php echo $Customer['customer_id']; ?>" class="btn-action btn-edit">Se mer</a>
-									<button class="btn-action btn-edit" onclick="openUpdateModal(<?php echo $Customer['customer_id']; ?>, '<?php echo htmlspecialchars($Customer['name']); ?>', '<?php echo htmlspecialchars($Customer['address']); ?>', '<?php echo htmlspecialchars($Customer['phone_number']); ?>')">Rediger</button>
+									<a href="list_customers.php?customer=<?php echo $customer['customer_id']; ?>" class="btn-action btn-edit">Se mer</a>
+									<button class="btn-action btn-edit" onclick="openUpdateModal(<?php echo $customer['customer_id']; ?>, '<?php echo htmlspecialchars($customer['name']); ?>', '<?php echo htmlspecialchars($customer['address']); ?>', '<?php echo htmlspecialchars($customer['phone_number']); ?>')">Rediger</button>
 
 								</div>
 							</td>
