@@ -4,8 +4,7 @@
  * @Author: William Berge Groensberg
  * @Date:   2026-03-03 09:18:02
  * @Last Modified by:   William Berge Groensberg
- * @Last Modified time: 2026-03-20 09:42:37
- * test 
+ * @Last Modified time: 2026-03-20 09:40:08
  */
 require "auth_check.php";
 
@@ -49,9 +48,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["update_customer"])) {
 	exit;
 }
 
-$Sql = "SELECT * FROM customer";
-$Statement = $Pdo->query($Sql);
-$Customers = $Statement->fetchAll(PDO::FETCH_ASSOC);
+$allowed_columns = ["customer_id", "name", "address", "phone_number", "kunde_siden"];
+$column = $_GET["column"] ?? "customer_id";
+if (!in_array($column, $allowed_columns)) {
+    $column = "customer_id";
+}
+
+$sort_type = "ASC";
+if (isset($_GET['sort'])) {
+    $sort_type = $_GET['sort'] == "DESC" ? "DESC" : "ASC";
+} elseif (isset($_SESSION["sort_type"])) {
+    $sort_type = $_SESSION["sort_type"];
+}
+$_SESSION["sort_type"] = $sort_type;
+
+$Sql = "SELECT * FROM customer ORDER BY $column $sort_type";
+$Stmt = $Pdo->prepare($Sql);
+$Stmt->execute();
+
+$customers = $Stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -67,31 +82,31 @@ $Customers = $Statement->fetchAll(PDO::FETCH_ASSOC);
 	<div style="margin: 15px;">
 		<div class="table-header">
 			<div></div>
-			<button class="btn-add" onclick="document.getElementById('addModal').classList.add('show')">+ Add Customer</button>
+			<button class="btn-add" onclick="document.getElementById('addModal').classList.add('show')">+ Ny Bedrift</button>
 		</div>
 
 		<div class="customers-table-container" style="margin-top: 15px; clear: both;">
 			<table class="customers-table">
 				<thead>
 					<tr>
-						<th>Name</th>
-						<th>Address</th>
-						<th>Phone Number</th>
-						<th>Customer Since</th>
-						<th>Actions</th>
+						<th><a href="?column=name&sort=<?php echo $sort_type == 'ASC' ? 'DESC' : 'ASC'; ?>" style="color: white; text-decoration: none;">Navn (<?php if ($column == 'name') {if ($sort_type == 'ASC') {$sort_icon = '↑';} elseif ($sort_type == 'DESC') {$sort_icon = '↓';}} else {$sort_icon = '↑↓';} echo $sort_icon ?>)</a></th>
+						<th>Telefonnummer</th>
+						<th><a href="?column=kunde_siden&sort=<?php echo $sort_type == 'ASC' ? 'DESC' : 'ASC'; ?>" style="color: white; text-decoration: none;">Kunde siden (<?php if ($column == 'kunde_siden') {if ($sort_type == 'ASC') {$sort_icon = '↑';} elseif ($sort_type == 'DESC') {$sort_icon = '↓';}} else {$sort_icon = '↑↓';} echo $sort_icon ?>)</a></th>
+						<th>Addresse</th>
+						<th>Handlinger</th>
 					</tr>
 				</thead>
 				<tbody>
-					<?php foreach ($Customers as $Customer): ?>
+					<?php foreach ($customers as $customer): ?>
 						<tr>
-							<td><?php echo htmlspecialchars($Customer['name']); ?></td>
-							<td><?php echo htmlspecialchars($Customer['address']); ?></td>
-							<td><?php echo htmlspecialchars($Customer['phone_number']); ?></td>
-							<td><?php echo htmlspecialchars($Customer['kunde_siden']); ?></td>
+							<td><?php echo htmlspecialchars($customer['name']); ?></td>
+							<td><?php echo htmlspecialchars($customer['address']); ?></td>
+							<td><?php echo htmlspecialchars($customer['phone_number']); ?></td>
+							<td><?php echo htmlspecialchars($customer['kunde_siden']); ?></td>
 							<td>
 								<div class="action-btns">
-									<a href="list_people.php?customer=<?php echo $Customer['customer_id']; ?>" class="btn-action btn-edit">Se mer</a>
-									<button class="btn-action btn-edit" onclick="openUpdateModal(<?php echo $Customer['customer_id']; ?>, '<?php echo htmlspecialchars($Customer['name']); ?>', '<?php echo htmlspecialchars($Customer['address']); ?>', '<?php echo htmlspecialchars($Customer['phone_number']); ?>')">Rediger</button>
+									<a href="list_people.php?customer=<?php echo $customer['customer_id']; ?>" class="btn-action btn-edit">Se mer</a>
+									<button class="btn-action btn-edit" onclick="openUpdateModal(<?php echo $customer['customer_id']; ?>, '<?php echo htmlspecialchars($customer['name']); ?>', '<?php echo htmlspecialchars($customer['address']); ?>', '<?php echo htmlspecialchars($customer['phone_number']); ?>')">Rediger</button>
 
 								</div>
 							</td>
@@ -102,53 +117,9 @@ $Customers = $Statement->fetchAll(PDO::FETCH_ASSOC);
 		</div>
 	</div>
 
-	<div id="addModal" class="modal" onclick="if(event.target === this) this.classList.remove('show')">
-		<div class="modal-content">
-			<span class="close" onclick="document.getElementById('addModal').classList.remove('show')">&times;</span>
-			<h2>Add Customer</h2>
-			<form method="POST">
-				<input type="hidden" name="add_customer" value="1">
-				<div class="form-group">
-					<input type="text" id="name" name="name" placeholder=" " required>
-					<label for="name" class="floating">Name</label>
-				</div>
-				<div class="form-group">
-					<input type="text" id="address" name="address" placeholder=" " required>
-					<label for="address" class="floating">Address</label>
-				</div>
-				<div class="form-group">
-					<input type="text" id="phone_number" name="phone_number" placeholder=" " required>
-					<label for="phone_number" class="floating">Phone Number</label>
-				</div>
-				<button type="submit" class="btn-submit">Add Customer</button>
-			</form>
-		</div>
-	</div>
+	<?php include "add_customer.php"; ?>
 
-	<div id="updateModal" class="modal" onclick="if(event.target === this) this.classList.remove('show')">
-		<div class="modal-content">
-			<span class="close" onclick="document.getElementById('updateModal').classList.remove('show')">&times;</span>
-			<h2>Update Customer</h2>
-			<form method="POST">
-				<input type="hidden" name="update_customer" value="1">
-				<input type="hidden" id="update_id" name="id">
-				<div class="form-group">
-					<input type="text" id="update_name" name="name" placeholder=" " required>
-					<label for="update_name" class="floating">Name</label>
-				</div>
-				<div class="form-group">
-					<input type="text" id="update_address" name="address" placeholder=" " required>
-					<label for="update_address" class="floating">Address</label>
-				</div>
-				<div class="form-group">
-					<input type="text" id="update_phone_number" name="phone_number" placeholder=" " required>
-					<label for="update_phone_number" class="floating">Phone Number</label>
-				</div>
-				<button type="submit" class="btn-submit">Update Customer</button>
-				<button type="button" id="updateDeleteBtn" class="btn-delete" onclick="if(confirm('Are you sure you want to delete this customer?')) { window.location.href='delete_customer.php?id=' + document.getElementById('update_id').value; }" style="display: none;">Delete</button>
-			</form>
-		</div>
-	</div>
+    <?php include "update_customer.php"; ?>
 
 	<script>
 		function openUpdateModal(id, name, address, phone_number) {
@@ -160,6 +131,7 @@ $Customers = $Statement->fetchAll(PDO::FETCH_ASSOC);
 			document.getElementById('updateModal').classList.add('show');
 		}
 	</script>
+	
 </body>
 
 </html>

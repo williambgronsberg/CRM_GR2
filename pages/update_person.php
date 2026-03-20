@@ -53,8 +53,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	<?php include "pieces/nav.php"; ?>
 	
 	<div class="update-container">
-		<a href="list_customers.php" class="btn-back">&larr; Back</a>
-		<h1>Update Profile</h1>
+		<a href="list_customers.php" class="btn-back">&larr; Tilbake</a>
+		<h1>Oppdater profil</h1>
 		
 		<?php if (isset($error)): ?>
 			<p class="error"><?php echo $error; ?></p>
@@ -63,29 +63,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		<form action="update_person.php" method="post">
 			<div class="form-row">
 				<div class="form-group">
-					<label for="first_name">First Name</label>
+					<label for="first_name">Fornavn</label>
 					<input type="text" id="first_name" name="first_name" value="<?php echo $user_person['first_name']; ?>">
 				</div>
 				
 				<div class="form-group">
-					<label for="last_name">Last Name</label>
+					<label for="last_name">Etternavn</label>
 					<input type="text" id="last_name" name="last_name" value="<?php echo $user_person['last_name']; ?>">
 				</div>
 			</div>
 			
 			<div class="form-row">
 				<div class="form-group" style="flex: 0 0 200px;">
-					<label for="phone_number">Phone Number</label>
+					<label for="phone_number">Telefonnummer</label>
 					<input type="text" id="phone_number" name="phone_number" value="<?php echo $user_person['phone_number']; ?>">
 				</div>
 				
 				<div class="form-group">
-					<label for="email">Email</label>
+					<label for="email">E-post</label>
 					<input type="email" id="email" name="email" value="<?php echo $user_person['email']; ?>">
 				</div>
 			</div>
 			
-			<button type="submit" name="update" class="btn-save">Save Changes</button>
+			<button type="submit" name="update" class="btn-save">Lagre Endringer</button>
 		</form>
 	</div>
 </body>

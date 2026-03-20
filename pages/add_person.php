@@ -21,10 +21,10 @@
             <label for="last_name">Etternavn</label>
             <input name="last_name" id="last_name" type="text" placeholder="Skriv etternavnet ditt her..." required> <br> <br>
 
-            <label for="phone_number">Telefon nummer</label>
+            <label for="phone_number">Telefonnummer</label>
             <input name="phone_number" id="phone_number" type="text" placeholder="Skriv nummeret ditt her..." required> <br> <br>
 
-            <label for="email">Email</label>
+            <label for="email">E-post</label>
             <input name="email" id="email" type="text" placeholder="Skriv emailen din her..." required> <br> <br>
 
             <input type="submit" name="new_person" id="new_person" value="Registrer">
@@ -50,13 +50,21 @@ if (isset($_POST["new_person"]) && $_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
 
     $Sql = "INSERT INTO accounts (person_id, first_name, last_name, phone_number, email) VALUES(:person_id, :first_name, :last_name, :phone_number, :email);";
-    $Stmt = $Pdo->prepare($Sql);
-
-    $Stmt->bindParam(":person_id", $person_id);
-    $Stmt->bindParam(":first_name", $first_name);
-    $Stmt->bindParam(":last_name", $last_name);
-    $Stmt->bindParam(":phone_number", $phone_number);
-    $Stmt->bindParam(":email", $email);
+	try {
+			$Statement = $Pdo->prepare($Sql);
+			$Statement->execute([
+				":person_id" => $person_id,
+				":first_name" => $firstName,
+				":last_name" => $lastName,
+				":phone_number" => $phoneNumber,
+				":email" => $email
+		]);
+			
+			header("Location: list_people.php");
+			exit;
+	} catch (PDOException $e) {
+			$error = "ID finnes allerede, eller så oppstod det et problem.";
+	}
 
     $Stmt->execute();
 
