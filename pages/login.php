@@ -204,8 +204,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
 	<form action="login.php" method="post" class="form">
 		<p>
-			Welcome
-			<span>sign in to continue</span>
+			Velkommen
+			<span>logg inn for å fortsette</span>
 		</p>
 
 
@@ -219,7 +219,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 		<div class="separator">
 			<div></div>
-			<span>OR</span>
+			<span>eller</span>
 			<div></div>
 		</div>
 
@@ -237,6 +237,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 				<path d="m13 17 5-5-5-5" />
 			</svg>
 		</button>
+		<a href="forgot_password.php" style="color: white; font-size: 13px; opacity: 0.8; text-decoration: none;">
+			Glemt passord?
+		</a>
 	</form>
 </body>
 
