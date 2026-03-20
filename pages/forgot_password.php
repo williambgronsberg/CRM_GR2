@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$User = $Statement->fetch(PDO::FETCH_ASSOC);
 
 	// Always show success to avoid email enumeration
-	$success = "If that email exists, a reset link has been sent.";
+	$success = "Hvis e-posten du skrev finnes i vårt system, så har en mail med en lenke for å endre passord blitt sendt til den.";
 
 	if ($User) {
 		$token = bin2hex(random_bytes(32));
@@ -37,13 +37,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 		// Send email via Gmail SMTP using PHP mail with SMTP settings
 		$to      = $email;
-		$subject = "Tilbakestill passord — Frisk AS";
+		$subject = "Tilbakestill passord - Frisk AS";
 		$message = "Hei " . $User["first_name"] . ",\r\n\r\n"
-			. "Klikk lenken nedenfor for å tilbakestille passordet ditt.\r\n"
+			. "Tilbakestill passordet ditt med lenken nedenfor.\r\n"
 			. "Lenken er gyldig i 10 minutter.\r\n\r\n"
 			. $resetLink . "\r\n\r\n"
 			. "Hvis du ikke ba om dette, kan du ignorere denne e-posten.\r\n\r\n"
-			. "— Frisk AS";
+			. "- Frisk AS";
 
 		sendResetEmail($to, $subject, $message);
 	}
