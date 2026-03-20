@@ -30,9 +30,9 @@ if ($firstName && $lastName) {
 ?>
 
 <nav>
-	<div class="nav-logo">Frisk AS</div>
+	<div class="nav-logo"><a class='no_decor' href="list_customers.php">Frisk AS</a></div>
 	<div class="nav-links">
-		<a href="list_customers.php">bedrifter</a>
+		<a href="list_customers.php">Bedrifter</a>
 		<a href="about_us.php">Om oss</a>
 		<div class="nav-avatar" onclick="toggleProfileModal()">
 			<?php echo $initials; ?>
@@ -43,19 +43,19 @@ if ($firstName && $lastName) {
 <div id="profileModal" class="modal" onclick="closeProfileModal(event)">
 	<div class="modal-content" onclick="event.stopPropagation()">
 		<span class="close-btn" onclick="toggleProfileModal()">&times;</span>
-		<h2>Profile</h2>
+		<h2>Profil</h2>
 		<?php if ($User): ?>
 			<div class="profile-info">
-				<p><strong>Username:</strong> <?php echo htmlspecialchars($User["username"]); ?></p>
-				<p><strong>Email:</strong> <?php echo htmlspecialchars($User["email"] ?? "Not set"); ?></p>
+				<p><strong>Brukernavn:</strong> <?php echo htmlspecialchars($User["username"]); ?></p>
+				<p><strong>E-post:</strong> <?php echo htmlspecialchars($User["email"] ?? "Not set"); ?></p>
 				<p><strong>GitHub:</strong> <?php echo htmlspecialchars($User["github_username"] ?? "Not linked"); ?></p>
 			</div>
 			<div class="profile-actions">
-				<a href="update_account.php" class="btn-edit">Edit Profile</a>
-				<a href="logout.php" class="btn-logout">Logout</a>
+				<a href="update_account.php" class="btn-edit">Rediger Profil</a>
+				<a href="logout.php" class="btn-logout">Logg ut</a>
 			</div>
 		<?php else: ?>
-			<p>User not found</p>
+			<p>Bruker ikke funnet</p>
 		<?php endif; ?>
 	</div>
 </div>

@@ -65,15 +65,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Update Account</title>
+	<title>Oppdater bruker</title>
 	<?php include "pieces/head.php"; ?>
 </head>
 <body>
 	<?php include "pieces/nav.php"; ?>
 	
 	<div class="update-container">
-		<a href="list_customers.php" class="btn-back">&larr; Back</a>
-		<h1>Update Profile</h1>
+		<a href="list_customers.php" class="btn-back">&larr; Tilbake</a>
+		<h1>Oppdater profil</h1>
 		
 		<?php if (isset($error)): ?>
 			<p class="error"><?php echo $error; ?></p>
@@ -82,46 +82,46 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		<form action="update_account.php" method="post">
 			<div class="form-row">
 				<div class="form-group">
-					<label for="first_name">First Name</label>
+					<label for="first_name">Fornavn</label>
 					<input type="text" id="first_name" name="first_name" value="<?php echo $User['first_name']; ?>">
 				</div>
 				
 				<div class="form-group">
-					<label for="last_name">Last Name</label>
+					<label for="last_name">Etternavn</label>
 					<input type="text" id="last_name" name="last_name" value="<?php echo $User['last_name']; ?>">
 				</div>
 			</div>
 			
 			<div class="form-row">
 				<div class="form-group" style="flex: 0 0 200px;">
-					<label for="phone_number">Phone Number</label>
+					<label for="phone_number">Telefonnummer</label>
 					<input type="text" id="phone_number" name="phone_number" value="<?php echo $User['phone_number']; ?>">
 				</div>
 				
 				<div class="form-group">
-					<label for="email">Email</label>
+					<label for="email">E-post</label>
 					<input type="email" id="email" name="email" value="<?php echo $User['email']; ?>">
 				</div>
 			</div>
 			
 			<div class="form-group">
-				<label for="github_username">GitHub Username</label>
+				<label for="github_username">GitHub Brukernavn</label>
 				<input type="text" id="github_username" name="github_username" value="<?php echo $User['github_username']; ?>">
 			</div>
 			
 			<div class="form-row">
 				<div class="form-group">
-					<label for="new_password">New Password (leave blank to keep current)</label>
+					<label for="new_password">Nytt Passord (hold blank for å beholde nåværende)</label>
 					<input type="password" id="new_password" name="new_password">
 				</div>
 				
 				<div class="form-group">
-					<label for="confirm_password">Confirm New Password</label>
+					<label for="confirm_password">Bekreft Nytt Passord</label>
 					<input type="password" id="confirm_password" name="confirm_password">
 				</div>
 			</div>
 			
-			<button type="submit" name="update" class="btn-save">Save Changes</button>
+			<button type="submit" name="update" class="btn-save">Lagre Endringer</button>
 		</form>
 	</div>
 </body>
