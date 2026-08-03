@@ -1,3 +1,3 @@
 [![commitmentissues](https://img.shields.io/badge/%F0%9F%AA%A6%20declared%20dead-view%20certificate-555?style=for-the-badge&labelColor=cc0000)](https://commitmentissues.dev/?repo=williambgronsberg%2FCRM_GR2)
-<img align="center" src="/assets/svg/dead.png" width="100%"/>
+<img align="center" src="/assets/svg/CRM_GR2-certificate.png" width="100%"/>
 <img align="center" src="/assets/svg/readme.svg" width="100%"/>
