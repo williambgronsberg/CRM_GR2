@@ -58,12 +58,18 @@ function sendResetEmail($to, $subject, $message)
 		$mail->isSMTP();
 		$mail->Host       = "smtp.gmail.com";
 		$mail->SMTPAuth   = true;
-		$mail->Username   = "williamgronsberg31@gmail.com";
-		$mail->Password   = "gjwzqcmdtxnpywdk";
+		// Credentials are loaded from environment variables to avoid committing secrets to source control.
+		// Set MAIL_USERNAME and MAIL_PASSWORD in your environment (or in your process manager / CI secret store).
+		$mail->Username   = getenv('MAIL_USERNAME') ?: '';
+		$mail->Password   = getenv('MAIL_PASSWORD') ?: '';
 		$mail->SMTPSecure = PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_STARTTLS;
 		$mail->Port       = 587;
 
-		$mail->setFrom("williamgronsberg31@gmail.com", "Frisk AS");
+		// From address is also configurable via environment variables. Fallback to a no-reply address.
+		$fromAddress = getenv('MAIL_FROM_ADDRESS') ?: 'no-reply@frisk.example';
+		$fromName = getenv('MAIL_FROM_NAME') ?: 'Frisk AS';
+
+		$mail->setFrom($fromAddress, $fromName);
 		$mail->addAddress($to);
 		$mail->Subject = $subject;
 		$mail->Body    = $message;
